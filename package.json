@@ -1,0 +1,18 @@
+{
+  "name": "helpMath",
+  "version": "0.0.0",
+  "description": "Project helpMath",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CloseBRF/helpMath"
+  },
+  "author": "Matheus Ferreira Frederico <matheus.ferreira@focusnetworks.com.br>",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "~1.3.12",
+    "grunt": "^0.4.5",
+    "grunt-contrib-connect": "^0.11.2",
+    "grunt-contrib-jshint": "^0.11.3"
+  }
+}
