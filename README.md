@@ -10,4 +10,4 @@ CTTL
 
 #### Authors
 
-* **Matheus Ferreira** - <matheus.ferreira@focusnetworks.com.br>
+* **Matheus Ferreira** - <maathe.f@gmail.com>
