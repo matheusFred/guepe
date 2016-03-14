@@ -1,13 +1,13 @@
 {
-  "name": "helpMath",
+  "name": "CTTL",
   "version": "0.0.0",
-  "description": "Project helpMath",
+  "description": "Project CTTL",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/CloseBRF/helpMath"
+    "url": "https://github.com/CloseBRF/CTTL"
   },
-  "author": "Matheus Ferreira Frederico <matheus.ferreira@focusnetworks.com.br>",
+  "author": "Matheus Ferreira Frederico <maathe.f@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "bower": "~1.3.12",
