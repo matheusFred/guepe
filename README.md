@@ -7,7 +7,6 @@ CTTL
 
 2. To build the project a DEV experience:
   * $grunt 
-  		One dev branch.
 
 #### Authors
 
