@@ -1,23 +1,21 @@
 {
-  "name": "helpMath",
-  "version": "0.0.0",
+  "name": "gueper",
+  "version": "1.0.0",
   "moduleType": [
     "node"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/CloseBRF/Gueper",
   "ignore": [
-	"**/.*",
-	"node_modules",
-	"app/lib"
+    "**/.*",
+    "node_modules",
+    "docs/lib"
   ],
-  "devDependencies": {
-    "angular": "~1.4.5",
-	"bootstrap": "~3.3.5",
-	"jquery": "~2.1.4"
-  },
-  "dependencies": {},
-  "resolutions": {
-    "angular": ">=1.2.26 <=1.5"
+  "dependencies": {
+    "font-awesome": "latest",
+    "angular-ui-router": "latest",
+    "angular": "latest",
+    "bootstrap": "latest",
+    "jquery": "latest"
   }
 }
