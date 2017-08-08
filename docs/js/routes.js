@@ -8,12 +8,19 @@
 /*
 /* ****************************************************** */
 moduleApp.config(function($stateProvider, $urlRouterProvider) {
-  
-  $urlRouterProvider.otherwise('/index');
 
   $stateProvider
     .state('index', {
-      url: "/index",
+      url: "",
+      views: {
+        'Home': { templateUrl: '../templates/home.html', controller: 'homeCtrl'},
+        'Plans': { templateUrl: '../templates/plans.html', controller: 'plansCtrl'},
+        'Contact': { templateUrl: '../templates/contact.html', controller: 'contactCtrl'},
+        'Footer':{ templateUrl: '../templates/footer.html'}
+      }
+    }) 
+    .state('home', {
+      url: "/home",
       views: {
         'Home': { templateUrl: '../templates/home.html', controller: 'homeCtrl'},
         'Plans': { templateUrl: '../templates/plans.html', controller: 'plansCtrl'},
