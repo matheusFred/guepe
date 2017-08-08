@@ -6,7 +6,7 @@
 /* Desenvolvido por Matheus Ferreira <maathe.f@gmail.com>
 /*
 /* ****************************************************** */
-moduleApp.controller('contactCtrl', function($scope, $location, ,$http){
+moduleApp.controller('contactCtrl', function($scope, $location, $http){
 
     $scope.initMap = function() {
       var company = {lat: 28.5821233, lng: -80.8454649};
