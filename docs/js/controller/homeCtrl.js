@@ -6,7 +6,7 @@
 /* Desenvolvido por Matheus Ferreira <maathe.f@gmail.com>
 /*
 /* ****************************************************** */
-moduleApp.controller('homeCtrl', function($scope){
+moduleApp.controller('homeCtrl', function($scope, $location, $http){
 
 	$scope.steps = [
 		{photo: 'img/draw1.png',step: 'First step:',message: 'First you need to send us your idea to make the design, or if you prefer we can draw!'},

@@ -6,7 +6,7 @@
 /* Desenvolvido por Matheus Ferreira <maathe.f@gmail.com>
 /*
 /* ****************************************************** */
-moduleApp.controller('indexCtrl', function($scope){
+moduleApp.controller('indexCtrl', function($scope, $location, $http){
 
 	$scope.contact = function(){
         $('html, body').animate({

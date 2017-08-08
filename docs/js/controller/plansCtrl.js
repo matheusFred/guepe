@@ -6,7 +6,7 @@
 /* Desenvolvido por Matheus Ferreira <maathe.f@gmail.com>
 /*
 /* ****************************************************** */
-moduleApp.controller('plansCtrl', function($scope){
+moduleApp.controller('plansCtrl', function($scope, $location, $http){
 
 	$scope.prices = [
 	    {name:'Plan Basic', value:" 200", details: [{name: "Design I",option: 1},

@@ -6,7 +6,7 @@
 /* Desenvolvido por Matheus Ferreira <maathe.f@gmail.com>
 /*
 /* ****************************************************** */
-moduleApp.controller('faqCtrl', function($scope, $location){
+moduleApp.controller('faqCtrl', function($scope, $location, $http){
 
   $scope.faqsteps = [
     {namestep: 'Scope', boxes: [{tittle: 'Design I',fav: 'fa-desktop',desc: '(Only desktop support)',isCollapsed: true,coll1:'Layout analysis'},
