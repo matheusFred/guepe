@@ -7,7 +7,6 @@
 /* Desenvolvido por Matheus Ferreira <maathe.f@gmail.com>
 /*
 /* ****************************************************** */
-require('../templates/home.html');
 moduleApp.config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
