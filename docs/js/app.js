@@ -7,3 +7,13 @@
 /*
 /* ****************************************************** */
 var moduleApp = angular.module('guepeApp', ['ui.router', 'ui.bootstrap']);
+
+moduleApp.directive("footer", function($templateRequest, $compile){
+  return {
+    link: function(scope, element, attrs){
+      $templateRequest("../templates/footer.html").then(function(html){
+        element.append($compile(html)(scope));
+      });
+    }
+  };
+});
