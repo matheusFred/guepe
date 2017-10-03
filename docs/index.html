@@ -9,30 +9,6 @@
 		<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-		<!-- SCRIPT LIBS -->
-		<script src="lib/angular/angular.min.js"></script>
-		<script src="lib/jquery/dist/jquery.min.js"></script>
-		
-		<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="lib/angular-bootstrap/ui-bootstrap.min.js"></script>
-		<script src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-		
-		<script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
-		
-		<script async defer
-			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXhuXozlC4JqR97Bmr7ShwI10JIlPQEgI">
-		</script>
-
-		<!-- ANGULAR CONTROLLERS -->
-		<script src="js/app.js"></script>
-		<script src="js/routes.js"></script>
-
-		<script src="js/controller/faqCtrl.js"></script>
-		<script src="js/controller/homeCtrl.js"></script>
-		<script src="js/controller/plansCtrl.js"></script>
-		<script src="js/controller/indexCtrl.js"></script>
-		<script src="js/controller/contactCtrl.js"></script>
-
 		<!-- CSS -->
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/template-style/faq.css" />
@@ -40,6 +16,18 @@
 		<link rel="stylesheet" href="css/template-style/plans.css" />
 		<link rel="stylesheet" href="css/template-style/navbar.css" />
 		<link rel="stylesheet" href="css/template-style/contact.css" />
+
+		<!-- SCRIPT LIBS -->
+		<script src="lib/angular/angular.min.js"></script>
+		<script src="lib/jquery/dist/jquery.min.js"></script>
+		<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="lib/angular-bootstrap/ui-bootstrap.min.js"></script>
+		<script src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+		<script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+		
+		<script async defer
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXhuXozlC4JqR97Bmr7ShwI10JIlPQEgI">
+		</script>				
 	</head>
 
 	<body id="home">
@@ -93,19 +81,178 @@
 			</div>	<!-- Fecha container -->
 		</nav>
 		
-		<!--VIEW HOME -->
+		<!-- VIEW'S -->
 		<div ui-view="Home"></div>
-				
-		<!--VIEW PLANS -->
 		<div ui-view="Plans"></div>
-	
-		<!--VIEW FAQ -->
 		<div ui-view="Faq"></div>
-
-		<!--VIEW CONTACT -->
 		<div ui-view="Contact"></div>
+		<div ui-view="Footer"></div>
 
-		<!--VIEW FOOTER -->
-		<div ui-view="Footer"></div>		
+		<!-- ANGULAR CONTROLLERS -->
+		<script src="js/app.js"></script>
+		<script src="js/routes.js"></script>
+		<script src="js/controller/faqCtrl.js"></script>
+		<script src="js/controller/homeCtrl.js"></script>
+		<script src="js/controller/plansCtrl.js"></script>
+		<script src="js/controller/indexCtrl.js"></script>
+		<script src="js/controller/contactCtrl.js"></script>
+
+		<!-- TEMPLATE --> 
+		<script type="text/ng-template" id="/home.html">
+			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-home nopadding">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12 home-steps">
+							<div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="step in steps">
+								<img src="{{step.photo}}" alt="Hot home image">
+								<h3>{{step.step}}</h3>
+								<p>{{step.message}}</p>
+							</div>						
+						</div>
+					</div> <!-- Fecha row -->
+				</div> <!-- Fecha container -->
+				<div class="col-md-12 col-sm-12 col-xs-12 nopadding">
+					<div class="col-md-6 col-sm-6 col-xs-6 fixerseta"></div>
+					<div class="col-md-6 col-sm-6 col-xs-6 fixerseta1"></div>
+				</div>
+			</section>			
+		</script>	
+		<script type="text/ng-template" id="/plans.html"> 
+			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-plans azul-escuro">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<h2>PLANS</h2>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-12 plans-box" ng-repeat="price in prices">
+							<div class="col-md-12 col-sm-12 col-xs-12 nopadding-tablet">
+								<div class="col-md-12 col-sm-12 col-xs-12 verde-claro">
+									<h3>{{price.name}}</h3>
+								</div>
+								<div class="col-md-12 col-sm-12 col-xs-12 azul-medio">
+									<div class="col-md-12 col-sm-12 col-xs-12 plans-price">
+										<h4>US$:</h4>
+										<h1>{{price.value}}</h1>
+									</div>
+
+									<div class="col-md-12 col-sm-12 col-xs-12 plans-detail nopadding" ng-repeat="detail in price.details">
+										<div class="col-md-10 col-sm-9 col-xs-9">
+											<p>{{detail.name}}</p>
+										</div>
+
+										<div class="col-md-2  col-sm-1 col-xs-2" ng-if="detail.option == 0">
+											<i class="fa fa-window-close" aria-hidden="true"></i>
+										</div>
+										<div class="col-md-2 col-sm-1 col-xs-2" ng-if="detail.option == 1">
+											<i class="fa fa-check-square" aria-hidden="true"></i>
+										</div>
+
+										<div class="col-md-2 col-sm-2 col-xs-1" ng-if="detail.option == 3">
+											<h5>{{detail.number}}</h5>
+										</div>
+									</div>
+								</div>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</section>
+		</script>
+		<script type="text/ng-template" id="/contact.html">
+			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-contact" id="contact">
+				<div class="container">
+					<div class="col-sm-12 col-xs-12">
+						<img src="img/site-img2.png" class="img-responsive center-block" alt="">
+					</div>
+				</div>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<h2>CONTACT</h2>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<div class="col-md-6 col-sm-12 col-xs-12">
+								<i class="fa fa-mobile" aria-hidden="true"></i>
+								<h3>+1 (561) 853-8909</h3>
+								<p>Phone</p>
+							</div>
+							<div class="col-md-6 col-sm-12 col-xs-12">
+								<i class="fa fa-envelope-o" aria-hidden="true"></i>
+								<h3>guepebr@gmail.com</h3>
+								<p>Email</p>
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<div class="row">
+								<div id="map">map</div>
+							</div>
+						</div>
+					</div> <!-- Fecha row -->
+				</div> <!-- Fecha container -->
+			</section>	
+		</script>	
+		<script type="text/ng-template" id="/footer.html">
+			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-footer azul-escuro">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-sm-6 col-xs-12 footer-media">
+							<li class="col-xs-3 router-btn-simple"></li>
+							<li class="col-xs-2 router-btn-simple">
+								<a href="https://www.facebook.com/Guepebr/" target="_blank">
+									<i class="fa fa-facebook" aria-hidden="true"></i>
+								</a>
+							</li>	
+							<li class="col-xs-2 router-btn-simple">
+								<a href="https://github.com/CloseBRF" target="_blank">
+									<i class="fa fa-github" aria-hidden="true"></i>
+								</a>
+							</li>	
+							<li class="col-xs-2 router-btn-simple">
+								<a href="http://programmercrazy.tumblr.com/" target="_blank">
+									<i class="fa fa-tumblr" aria-hidden="true"></i>
+								</a>
+							</li>				
+						</div>
+						<div class="col-md-12 col-sm-12 col-xs-12 pdg-top10">
+							<p>Copyright &copy; Guepe 2017</p>
+						</div>			
+					</div>
+				</div>
+			</section>	
+		</script>	
+		<script type="text/ng-template" id="/faq.html">
+			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-faq azul-escuro">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<h2>FAQ</h2>
+						</div>
+
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="step in faqsteps">
+								<div class="col-md-12 col-sm-12 col-xs-12">
+									<h3>{{step.namestep}}</h3>
+								</div>
+
+								<div class="col-md-12 col-sm-12 col-xs-12 faq-box azul-medio" ng-repeat="stepbox in step.boxes">
+									<h5>{{stepbox.tittle}}</h5>
+									<i class="fa {{stepbox.fav}}" ng-click="stepbox.isCollapsed = !stepbox.isCollapsed"></i>
+									<h5>{{stepbox.desc}}</h5>
+
+									<div collapse="stepbox.isCollapsed">
+										<div ng-show="!stepbox.isCollapsed" class="panel-body faq-collapse">
+											<ul>	
+												<li>{{stepbox.coll1}}</li>
+											</ul>
+										</div>	
+								    </div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>	
+		</script>	
 	</body>
 </html>
