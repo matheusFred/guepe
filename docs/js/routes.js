@@ -7,8 +7,8 @@
 /* Desenvolvido por Matheus Ferreira <maathe.f@gmail.com>
 /*
 /* ****************************************************** */
-moduleApp.config(function($stateProvider, $urlRouterProvider) {
-
+moduleApp.config(function($stateProvider, $httpProvider) {
+  $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
   $stateProvider
     .state('index', {
       url: "",
