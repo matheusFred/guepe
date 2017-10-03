@@ -21,14 +21,20 @@ h5{font-weight: bold !important;margin: 0px !important;}
 @media only screen and (max-width: 768px) {
 	/****** DEFAULT ******/
 
-	.hidden-mobile{visibility: hidden !important;display: none !important;}	
+	.hidden-tablet{visibility: hidden !important;display: none !important;}	
+	.nopadding-tablet{padding-right: 0 !important; padding-left: 0 !important;}
 
 	/**** CLASS HOME ****/
 
 	.home-steps div{margin: 40px 0px !important;}	
 
-	.pagebox-contact img{top: -20px !important;}
 	.pagebox-contact i{margin-top: 20px !important;}
-
-	.footer-media{visibility: visible !important;display: initial !important;}
 }	 
+
+@media only screen and (max-width: 450px) {
+	/****** DEFAULT ******/
+	
+	.hidden-mobile{visibility: hidden !important;display: none !important;}
+	.footer-media{visibility: visible !important;display: initial !important;}
+
+}	

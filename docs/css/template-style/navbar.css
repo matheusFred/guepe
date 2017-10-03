@@ -6,8 +6,7 @@
 	background-color: #4E9BD4;	
 } 
 
-.router-tittle {position: fixed !important;}
-.router-tittle h1{margin-top: 5px;cursor: pointer; margin-left:40px; margin-right: 40px;}
+.router-tittle h1{margin-top: 5px;cursor: pointer;}
 
 .router-btn-simple{
 	margin-top: 5px;
