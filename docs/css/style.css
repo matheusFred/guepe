@@ -129,15 +129,13 @@ h5{font-weight: bold !important;margin: 0px !important;}
 /**** ABOUT US ****/
 
 .pagebox-about{
-	height: auto;
+	height: 60px;
 	background-repeat: no-repeat;
 	background-position: -0px -80px;
-	background-image: url(../img/home/site-img1.png);
+	background-image: url(../img/site-img2.jpg);
 	background-attachment: fixed;
   	background-size: cover;
 } 
-
-.about-partners img{width:300px;height: 150px;}
 
 /**** PAGE FAQ ****/ 
 .pagebox-faq{
