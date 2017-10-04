@@ -6,4 +6,4 @@
 /* Desenvolvido por Matheus Ferreira <maathe.f@gmail.com>
 /*
 /* ****************************************************** */
-var moduleApp = angular.module('guepeApp', ['ngAnimate', 'ui.router', 'ui.bootstrap']);
+var moduleApp = angular.module('guepeApp', ['ngAnimate', 'ui.router']);

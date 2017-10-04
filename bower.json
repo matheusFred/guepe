@@ -14,9 +14,9 @@
   "dependencies": {
     "font-awesome": "latest",
     "angular-ui-router": "latest",
-    "angular-animate":"latest",
     "angular": "latest",
     "bootstrap": "latest",
-    "jquery": "latest"
+    "jquery": "latest",
+    "angular-animate": "^1.6.6"
   }
 }
