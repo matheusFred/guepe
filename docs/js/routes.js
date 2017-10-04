@@ -31,7 +31,7 @@ moduleApp.config(function($stateProvider) {
       url: "/faq",
       views: {
         'About': { templateUrl: '/about.html'},
-        'Faq': { templateUrl: '/faq.html',controller: 'faqCtrl'},
+        'Faq': { templateUrl: '/faq.html'},
         'Contact': { templateUrl: '/contact.html',controller: 'contactCtrl'},
         'Footer':{ templateUrl: '/footer.html'}
       }
