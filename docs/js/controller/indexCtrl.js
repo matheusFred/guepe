@@ -7,18 +7,9 @@
 /*
 /* ****************************************************** */
 moduleApp.controller('indexCtrl', function($scope, $location, $http){
-
 	$scope.contact = function(){
         $('html, body').animate({
             scrollTop: $("#contact").offset().top
         })		
 	};
-
-	$scope.home = function(){
-        $('html, body').animate({
-            scrollTop: $("#home").offset().top
-        })		
-	};
-
-
 });

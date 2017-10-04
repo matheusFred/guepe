@@ -11,20 +11,7 @@
 
 		<!-- CSS -->
 		<link rel="stylesheet" href="css/style.css" />
-		<link rel="stylesheet" href="css/template-style/faq.css" />
-		<link rel="stylesheet" href="css/template-style/home.css" />
-		<link rel="stylesheet" href="css/template-style/plans.css" />
-		<link rel="stylesheet" href="css/template-style/navbar.css" />
-		<link rel="stylesheet" href="css/template-style/contact.css" />
-
-		<!-- SCRIPT LIBS -->
-		<script src="lib/angular/angular.min.js"></script>
-		<script src="lib/jquery/dist/jquery.min.js"></script>
-		<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="lib/angular-bootstrap/ui-bootstrap.min.js"></script>
-		<script src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-		<script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
-		
+	
 		<script async defer
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXhuXozlC4JqR97Bmr7ShwI10JIlPQEgI">
 		</script>				
@@ -35,7 +22,7 @@
 		<nav class="col-md-12 col-sm-12 col-xs-12 router-menu azul-claro" ng-controller="indexCtrl">
 			<div class="container">
 				<div class="row">
-					<div class="verde-claro router-tittle col-md-3 col-sm-3 col-xs-6" ui-sref="home" ng-click="home()">
+					<div class="verde-claro router-tittle col-md-3 col-sm-3 col-xs-6" ui-sref="home">
 						<h1>Guepe</h1>
 					</div>
 
@@ -82,11 +69,21 @@
 		</nav>
 		
 		<!-- VIEW'S -->
-		<div ui-view="Home"></div>
-		<div ui-view="Plans"></div>
-		<div ui-view="Faq"></div>
-		<div ui-view="Contact"></div>
-		<div ui-view="Footer"></div>
+		<div class="transition" ui-view="Home"></div>
+		<div class="transition" ui-view="Plans"></div>
+		<div class="transition" ui-view="About"></div>
+		<div class="transition" ui-view="Faq"></div>
+		<div class="transition" ui-view="Contact"></div>
+		<div class="transition" ui-view="Footer"></div>
+
+		<!-- SCRIPT LIBS -->
+		<script src="lib/angular/angular.min.js"></script>
+		<script src="lib/jquery/dist/jquery.min.js"></script>
+		<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="lib/angular-bootstrap/ui-bootstrap.min.js"></script>
+		<script src="lib/angular-animate/angular-animate.min.js"></script>
+		<script src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+		<script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
 
 		<!-- ANGULAR CONTROLLERS -->
 		<script src="js/app.js"></script>
@@ -104,7 +101,7 @@
 					<div class="row">
 						<div class="col-md-12 col-sm-12 col-xs-12 home-steps">
 							<div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="step in steps">
-								<img src="{{step.photo}}" alt="Hot home image">
+								<img ng-src="{{step.photo}}" alt="Hot home image">
 								<h3>{{step.step}}</h3>
 								<p>{{step.message}}</p>
 							</div>						
@@ -112,13 +109,14 @@
 					</div> <!-- Fecha row -->
 				</div> <!-- Fecha container -->
 				<div class="col-md-12 col-sm-12 col-xs-12 nopadding">
-					<div class="col-md-6 col-sm-6 col-xs-6 fixerseta"></div>
-					<div class="col-md-6 col-sm-6 col-xs-6 fixerseta1"></div>
+					<div class="col-md-6 col-sm-6 col-xs-6 fixer-baixo"></div>
+					<div class="col-md-6 col-sm-6 col-xs-6 fixer-baixo1"></div>
 				</div>
 			</section>			
-		</script>	
+		</script>
+
 		<script type="text/ng-template" id="/plans.html"> 
-			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-plans azul-escuro">
+			<section class="col-md-12 col-sm-12 col-xs-12 nopadding	 pagebox-plans azul-escuro">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 col-sm-12 col-xs-12">
@@ -155,29 +153,34 @@
 							</div>	
 						</div>
 					</div>
-				</div>
-			</section>
+				</div>			
+			</section>			
 		</script>
+
 		<script type="text/ng-template" id="/contact.html">
-			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-contact" id="contact">
-				<div class="container">
-					<div class="col-sm-12 col-xs-12">
-						<img src="img/site-img2.png" class="img-responsive center-block" alt="">
-					</div>
-				</div>
+			<section class="col-md-12 col-sm-12 col-xs-12 nopadding pagebox-contact" id="contact">
+			<div class="col-md-12 col-sm-12 col-xs-12 nopadding">
+				<div class="col-md-6 col-sm-6 col-xs-6 fixer-cima"></div>
+				<div class="col-md-6 col-sm-6 col-xs-6 fixer-cima1"></div>
+			</div>	
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 col-sm-12 col-xs-12">
 							<h2>CONTACT</h2>
 						</div>
-						<div class="col-md-6 col-sm-6 col-xs-12">
-							<div class="col-md-6 col-sm-12 col-xs-12">
-								<i class="fa fa-mobile" aria-hidden="true"></i>
+						<div class="col-md-6 col-sm-6 col-xs-12 contact">
+							<div class="col-md-5 col-sm-12 col-xs-12">
+								<i class="fa fa-mobile hidden-tablet" aria-hidden="true"></i>
 								<h3>+1 (561) 853-8909</h3>
 								<p>Phone</p>
 							</div>
-							<div class="col-md-6 col-sm-12 col-xs-12">
-								<i class="fa fa-envelope-o" aria-hidden="true"></i>
+							<div class="col-md-2 hidden-tablet">
+								<li class="router-btn-simple" ui-sref="faq">
+									<h3><i class="fa fa-question-circle-o" aria-hidden="true"></i></h3>
+								</li>
+							</div>							
+							<div class="col-md-5 col-sm-12 col-xs-12">
+								<i class="fa fa-envelope-o hidden-tablet" aria-hidden="true"></i>
 								<h3>guepebr@gmail.com</h3>
 								<p>Email</p>
 							</div>
@@ -190,7 +193,8 @@
 					</div> <!-- Fecha row -->
 				</div> <!-- Fecha container -->
 			</section>	
-		</script>	
+		</script>
+
 		<script type="text/ng-template" id="/footer.html">
 			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-footer azul-escuro">
 				<div class="container">
@@ -219,40 +223,70 @@
 					</div>
 				</div>
 			</section>	
-		</script>	
+		</script>
+
 		<script type="text/ng-template" id="/faq.html">
 			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-faq azul-escuro">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 col-sm-12 col-xs-12">
 							<h2>FAQ</h2>
-						</div>
+						</div>						
+						<ul class="col-md-6 col-sm-6 col-xs-12 faq-contract"> 
+							<li>
+								<h3>Desing II</h3>
+								<p>Mobile and tablet support.</p>
+							</li>
+							<li>
+								<h3>Maintenance</h3>
+								<p>Update layout after final prototype.</p>
+							</li>
+							<li>
+								<h3>Help Desk</h3>
+								<p>All plans include but only a few are 24hrs.</p>
+							</li>
+							<li>
+								<h3>Systems</h3>
+								<p>System for your customer to use on your website.</p>
+							</li>
+						</ul>
+
+						<ul class="col-md-6 col-sm-6 col-xs-12 faq-contract"> 
+							<li>
+								<h3>Design I</h3>
+								<p>Choose the colors of your website using the colors below:</p>
+								<img src="img/faq/palheta.jpg" alt="Colors">
+								<p>Choose your pages and menu layout.</p>
+								<p>Choose the sources for your website:<a href="https://fonts.google.com/" target="_blank">Available Fonts!</a></p>
+							</li>
+						</ul>
 
 						<div class="col-md-12 col-sm-12 col-xs-12">
-							<div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="step in faqsteps">
-								<div class="col-md-12 col-sm-12 col-xs-12">
-									<h3>{{step.namestep}}</h3>
-								</div>
-
-								<div class="col-md-12 col-sm-12 col-xs-12 faq-box azul-medio" ng-repeat="stepbox in step.boxes">
-									<h5>{{stepbox.tittle}}</h5>
-									<i class="fa {{stepbox.fav}}" ng-click="stepbox.isCollapsed = !stepbox.isCollapsed"></i>
-									<h5>{{stepbox.desc}}</h5>
-
-									<div collapse="stepbox.isCollapsed">
-										<div ng-show="!stepbox.isCollapsed" class="panel-body faq-collapse">
-											<ul>	
-												<li>{{stepbox.coll1}}</li>
-											</ul>
-										</div>	
-								    </div>
-								</div>
-							</div>
-						</div>
-
+							<h3>More information and contract terms contact by email!</h3>
+						</div>						
 					</div>
 				</div>
 			</section>	
-		</script>	
+		</script>
+
+		<script type="text/ng-template" id="/about.html">
+			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-about nopadding">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<h2>Portfolio</h2>
+							<div class="about-partners">
+								<img src="img/faq/transffer.png" class="center-block" alt="Partner imagem">
+							</div>  
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12 col-sm-12 col-xs-12 nopadding">
+					<div class="col-md-6 col-sm-6 col-xs-6 fixer-baixo"></div>
+					<div class="col-md-6 col-sm-6 col-xs-6 fixer-baixo1"></div>
+				</div>				
+			</section>	
+		</script>
+
 	</body>
 </html>

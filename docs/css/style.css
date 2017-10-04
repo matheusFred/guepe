@@ -18,23 +18,189 @@ h5{font-weight: bold !important;margin: 0px !important;}
 .azul-escuro{background: #23232d;}
 .verde-claro{background: #02a9a2;}
 
+/* TRANSIÇÃO DE PÁGINAS */
+
+.transition.ng-enter {
+  transition: 0.5s linear all;
+  opacity:0;
+}
+.transition.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+/**** CLASS NAVBAR ****/
+
+.router-menu{
+	z-index: 10;
+	height: 50px;
+	background-color: #4E9BD4;	
+} 
+
+.router-tittle h1{margin-top: 5px;cursor: pointer;}
+
+.router-btn-simple{
+	margin-top: 5px;
+	list-style: none;
+} .router-btn-simple:hover h3{
+	color:#242333; /** Ver isso **/
+	cursor: pointer;
+	transition: 0.4s;
+} .router-btn-simple h3{margin-top: 5px;}	
+
+
+/**** FOOTER ****/
+
+.pagebox-footer i{font-size: 25px;margin: 5px 0px;}
+
+.footer-media{visibility: hidden;display: none;}
+
+/**** PAGE HOME ****/
+
+.pagebox-home{
+	height: auto;
+	background-repeat: no-repeat;
+	background-position: -0px -80px;
+	background-image: url(../../img/home/site-img1.png);
+	background-attachment: fixed;
+  	background-size: cover;
+} 
+
+.home-steps div{
+	margin-top: 100px;
+	margin-bottom: 90px;
+}
+
+/**** FIXER ****/
+
+.fixer-baixo,
+.fixer-baixo1,
+.fixer-cima,
+.fixer-cima1{z-index: 10}
+
+.fixer-baixo{
+	border-bottom: 40px solid #23232d;
+	border-right: 40px solid transparent;
+}
+
+.fixer-baixo1{
+	border-bottom: 40px solid #23232d;
+	border-left: 40px solid transparent;
+}
+
+.fixer-cima{
+	border-top: 40px solid #23232d;
+	border-right: 40px solid transparent;
+}
+
+.fixer-cima1{
+	border-top: 40px solid #23232d;
+	border-left: 40px solid transparent;
+}
+
+/**** PAGE PLANS ****/ 
+
+.pagebox-plans{
+	z-index: 2;
+	height: auto; 
+	border-bottom: 50px solid #23232d;
+}
+
+.plans-box{margin-top: 30px;}
+.plans-price h1{
+	color:#4E9BD4;
+	font-size:50px; 
+}
+.plans-price h1,
+.plans-price h4{
+	font-weight: bold;
+	margin-top: 15px 0px; 
+	display: inline-block; 
+}
+
+.plans-detail{
+	margin-top: 10px;
+	font-weight: bold;
+	border-bottom: 1px solid #004845;
+} .plans-detail:last-child{border-bottom: none;}
+
+.plans-detail i{margin-top: 5px;}
+.plans-detail p{text-align: left;}
+
+/**** ABOUT US ****/
+
+.pagebox-about{
+	height: auto;
+	background-repeat: no-repeat;
+	background-position: -0px -80px;
+	background-image: url(../../img/home/site-img1.png);
+	background-attachment: fixed;
+  	background-size: cover;
+} 
+
+.about-partners img{width:300px;height: 150px;}
+
+/**** PAGE FAQ ****/ 
+.pagebox-faq{
+	z-index: 2;
+	height: auto;
+	padding-bottom: 50px;
+}
+
+.faq-contract{text-align: left;margin-top: 20px}
+.faq-contract li p,
+.faq-contract li a,
+.faq-contract li img{ margin-left: 10px; }
+
+.faq-contract img{
+	width: 250px;
+	height: 150px;
+	padding-bottom: 15px;
+}
+
+/**** PAGE CONTACT ****/ 
+
+.pagebox-contact{
+	height: auto;
+	background-image: url(../../img/site-img2.jpg);
+	background-attachment: fixed;
+  	background-size: cover;
+  	background-repeat: repeat-x;
+
+}
+
+.pagebox-contact i{font-size: 70px;margin-top: 70px;}
+
+#map{
+  height: 250px;
+  margin: 30px;
+  border: 1px solid #ccc;
+}
+
+/**** MEDIA QUERY'S MOBILE CONFIGURATION ****/
+
 @media only screen and (max-width: 768px) {
 	/****** DEFAULT ******/
 
-	.hidden-tablet{visibility: hidden !important;display: none !important;}	
-	.nopadding-tablet{padding-right: 0 !important; padding-left: 0 !important;}
+	.hidden-tablet{visibility: hidden;display: none;}	
+	.nopadding-tablet{padding-right: 0; padding-left: 0;}
 
 	/**** CLASS HOME ****/
 
-	.home-steps div{margin: 40px 0px !important;}	
+	.home-steps div{margin: 40px 0px;}	
 
-	.pagebox-contact i{margin-top: 20px !important;}
+	/**** CLASS CONTACT ****/
+
+	.pagebox-contact .contact,
+	.pagebox-contact .contact div{margin-top: 30px;}
 }	 
 
 @media only screen and (max-width: 450px) {
 	/****** DEFAULT ******/
 	
-	.hidden-mobile{visibility: hidden !important;display: none !important;}
-	.footer-media{visibility: visible !important;display: initial !important;}
+	.hidden-mobile{visibility: hidden;display: none;}
+
+	/**** CLASS FOOTER ****/
+	
+	.footer-media{visibility: visible;display: initial;}
 
 }	
