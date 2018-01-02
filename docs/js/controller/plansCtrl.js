@@ -9,20 +9,26 @@
 moduleApp.controller('plansCtrl', function($scope, $location, $http){
 
 	$scope.prices = [
-	    {name:'Plan Basic', value:" 400", details: [{name: "Design I",option: 1},
-	    										   {name: "Design II",option: 0},
+	    {name:'Plan Basic', value:" 400", details: [{name: "Mobile Suport",option: 0},	    										
+	    										   {name: "Guide", option: 0},	    										   
 	    										   {name: "Maintenance",option: 2, number: "3"},
-	    										   {name: "Helpdesk", option: 1}	    										   
+	    										   {name: "Helpdesk", option: 2, number: "12h"},
+	    										   {name: "Free Host", option: 0},
+	    										   {name: "Google Analytics", option: 0}
 	    ]},
-	    {name:'Plan Dynamic', value:" 600", details: [{name: "Design I",option: 1},
-	    										   {name: "Design II",option: 1},
+	    {name:'Plan Dynamic', value:" 600", details: [{name: "Mobile Suport",option: 1},
+	    										   {name: "Guide", option: 1},
 	    										   {name: "Maintenance",option: 2, number: "5"},
-	    										   {name: "Helpdesk", option: 1}
+	    										   {name: "Helpdesk", option: 2, number: "24h"},
+	    										   {name: "Free Host", option: 1},
+	    										   {name: "Google Analytics", option: 0}
 	    ]},
-	    {name:'Plan Ultra', value:" 800", details: [{name: "Design I",option: 1},
-	    										   {name: "Design II",option: 1},
+	    {name:'Plan Ultra', value:" 800", details: [{name: "Mobile Suport",option: 1},
+	    										   {name: "Guide", option: 1},
 	    										   {name: "Maintenance",option: 2, number: "7"},
-	    										   {name: "Helpdesk", option: 1}
+	    										   {name: "Helpdesk", option: 2, number: "24h"},
+	    										   {name: "Free Host", option: 1},
+	    										   {name: "Google Analytics", option: 1}
 	    ]},
     ];
 

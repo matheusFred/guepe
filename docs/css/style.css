@@ -12,11 +12,14 @@ h3{margin-top: 10px !important;}
 h5{font-weight: bold !important;margin: 0px !important;}
 
 .nopadding{padding-right: 0px !important;padding-left: 0px !important;}
-.pdg-top10{padding-top: 10px !important;}
+.pdg-top15{padding-top: 15px !important;}
 
-.azul-medio{background-color: rgba(78,155,212, 0.3);}
+.azul-claro{background: #336699;}
+.azul-medio{background: #2d445c}
 .azul-escuro{background: #23232d;}
+
 .verde-claro{background: #02a9a2;}
+.verde-escuro{background: #003333;}
 
 /* TRANSIÇÃO DE PÁGINAS */
 
@@ -33,7 +36,6 @@ h5{font-weight: bold !important;margin: 0px !important;}
 .router-menu{
 	z-index: 10;
 	height: 50px;
-	background-color: #4E9BD4;	
 } 
 
 .router-tittle h1{margin-top: 5px;cursor: pointer;}
@@ -41,18 +43,25 @@ h5{font-weight: bold !important;margin: 0px !important;}
 .router-btn-simple{
 	margin-top: 5px;
 	list-style: none;
-} .router-btn-simple:hover h3{
+} 
+.btn-contact:hover,
+.plans-faq:hover i,
+.router-btn-simple:hover h4{
 	color:#242333; /** Ver isso **/
 	cursor: pointer;
 	transition: 0.4s;
-} .router-btn-simple h3{margin-top: 5px;}	
+} 	
+
+.btn-contact{
+	margin-top: 7px;
+	font-size: 25px;
+	visibility: hidden;
+}
 
 
 /**** FOOTER ****/
 
-.pagebox-footer i{font-size: 25px;margin: 5px 0px;}
-
-.footer-media{visibility: hidden;display: none;}
+.pagebox-footer i{font-size: 25px;margin: 5px 0px; }
 
 /**** PAGE HOME ****/
 
@@ -78,22 +87,22 @@ h5{font-weight: bold !important;margin: 0px !important;}
 .fixer-cima1{z-index: 10}
 
 .fixer-baixo{
-	border-bottom: 40px solid #23232d;
+	border-bottom: 40px solid #336699;
 	border-right: 40px solid transparent;
 }
 
 .fixer-baixo1{
-	border-bottom: 40px solid #23232d;
+	border-bottom: 40px solid #336699;
 	border-left: 40px solid transparent;
 }
 
 .fixer-cima{
-	border-top: 40px solid #23232d;
+	border-top: 40px solid #336699;
 	border-right: 40px solid transparent;
 }
 
 .fixer-cima1{
-	border-top: 40px solid #23232d;
+	border-top: 40px solid #336699;
 	border-left: 40px solid transparent;
 }
 
@@ -102,7 +111,7 @@ h5{font-weight: bold !important;margin: 0px !important;}
 .pagebox-plans{
 	z-index: 2;
 	height: auto; 
-	border-bottom: 50px solid #23232d;
+	padding-bottom: 50px;
 }
 
 .plans-box{margin-top: 30px;}
@@ -120,11 +129,13 @@ h5{font-weight: bold !important;margin: 0px !important;}
 .plans-detail{
 	margin-top: 10px;
 	font-weight: bold;
-	border-bottom: 1px solid #004845;
-} .plans-detail:last-child{border-bottom: none;}
+	border-bottom: 1px solid #336699;
+} .last-item{ border-bottom: none }
 
 .plans-detail i{margin-top: 5px;}
-.plans-detail p{text-align: left;}
+.plans-detail p{text-align: left;}  
+
+.plans-faq i{margin: 10px 0px; font-size: 50px;color: #336699;}
 
 /**** ABOUT US ****/
 
@@ -171,7 +182,6 @@ h5{font-weight: bold !important;margin: 0px !important;}
 #map{
   height: 250px;
   margin: 30px;
-  border: 1px solid #ccc;
 }
 
 /**** MEDIA QUERY'S MOBILE CONFIGURATION ****/
@@ -188,17 +198,14 @@ h5{font-weight: bold !important;margin: 0px !important;}
 
 	/**** CLASS CONTACT ****/
 
-	.pagebox-contact .contact,
-	.pagebox-contact .contact div{margin-top: 30px;}
+	.pagebox-contact i{margin-top: 30px;}
 }	 
 
 @media only screen and (max-width: 450px) {
 	/****** DEFAULT ******/
 	
 	.hidden-mobile{visibility: hidden;display: none;}
-
-	/**** CLASS FOOTER ****/
-	
-	.footer-media{visibility: visible;display: initial;}
+	.pagebox-footer i{margin: 0px 0px 15px 0px; }
+	.btn-contact{visibility: visible;}
 
 }	

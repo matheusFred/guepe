@@ -9,9 +9,9 @@
 moduleApp.controller('homeCtrl', function($scope, $location, $http){
 
 	$scope.steps = [
-		{photo: 'img/home/draw1.png',step: 'First step:',message: 'First, we make the prototype'},
-		{photo: 'img/home/draw2.png',step: 'Second step:',message: 'Then, you analyze the prototype and we develop,'},
-		{photo: 'img/home/draw3.png',step: 'Third step:',message: 'Finally, your website is ready to succeed!'}
+		{photo: 'img/home/draw1.png',step: 'First step:',message: 'We make the prototype based on customer request,'},
+		{photo: 'img/home/draw2.png',step: 'Second step:',message: 'Prototype ready we can move to develop phase,'},
+		{photo: 'img/home/draw3.png',step: 'Third step:',message: 'Your website get you online ready for business!'}
 	];
 	
 });  
