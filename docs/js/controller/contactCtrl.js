@@ -101,6 +101,6 @@ moduleApp.controller('contactCtrl', function($scope, $location, $http){
       });
     };
 
-    window.setTimeout(function() {$scope.initMap();}, 15);
+    window.setTimeout(function() {$scope.initMap();}, 300);
 
 });  
