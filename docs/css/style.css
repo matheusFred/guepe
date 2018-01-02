@@ -130,7 +130,7 @@ h5{font-weight: bold !important;margin: 0px !important;}
 	margin-top: 10px;
 	font-weight: bold;
 	border-bottom: 1px solid #336699;
-} .last-item{ border-bottom: none }
+} .last-item{ border-bottom: none, margin-bottom 10px; }
 
 .plans-detail i{margin-top: 5px;}
 .plans-detail p{text-align: left;}  
