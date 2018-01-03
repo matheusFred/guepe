@@ -7,9 +7,20 @@
 /*
 /* ****************************************************** */
 moduleApp.controller('indexCtrl', function($scope, $location, $http){
-	$scope.contact = function(){
+ 	
+ 	$scope.btnMobile = false;
+
+	$scope.scrollContact = function(){
         $('html, body').animate({
             scrollTop: $("#contact").offset().top
         })		
 	};
+
+	$scope.scrollTop = function(){
+	    $('html, body').animate({
+	        scrollTop: $("#navbar").offset().top
+	    })		
+	};
+
+
 });

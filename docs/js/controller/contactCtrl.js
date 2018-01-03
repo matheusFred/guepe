@@ -7,6 +7,7 @@
 /*
 /* ****************************************************** */
 moduleApp.controller('contactCtrl', function($scope, $location, $http){
+  $scope.currentPath = $location.path();
 
     $scope.initMap = function() {
       var company = {lat: 28.5821233, lng: -80.8454649};

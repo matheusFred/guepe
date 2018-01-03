@@ -7,13 +7,16 @@
 /* Desenvolvido por Matheus Ferreira <maathe.f@gmail.com>
 /*
 /* ****************************************************** */
+moduleApp.config(["$locationProvider", function($locationProvider) {
+  $locationProvider.html5Mode(true);
+}]);
 moduleApp.config(function($stateProvider) {
   $stateProvider
     .state('index', {
-      url: "",
+      url: "/",
       views: {
         'Home': { templateUrl: '/home.html', controller: 'homeCtrl'},
-        'Plans': { templateUrl: '/plans.html', controller: 'plansCtrl'},
+        'Mission': { templateUrl: '/mission.html'},
         'Contact': { templateUrl: '/contact.html', controller: 'contactCtrl'},
         'Footer':{ templateUrl: '/footer.html'}
       }
@@ -22,18 +25,27 @@ moduleApp.config(function($stateProvider) {
       url: "/home",
       views: {
         'Home': { templateUrl: '/home.html', controller: 'homeCtrl'},
-        'Plans': { templateUrl: '/plans.html', controller: 'plansCtrl'},
+        'Mission': { templateUrl: '/mission.html'},
         'Contact': { templateUrl: '/contact.html', controller: 'contactCtrl'},
         'Footer':{ templateUrl: '/footer.html'}
       }
-    })    
-    .state('faq', {
-      url: "/faq",
+    })  
+    .state('services', {
+      url: "/services",
       views: {
-        'About': { templateUrl: '/about.html'},
-        'Faq': { templateUrl: '/faq.html'},
+        'Services': { templateUrl: '/services.html', controller: 'serviceCtrl'},
+        'Plans': { templateUrl: '/plans.html', controller: 'plansCtrl'},
         'Contact': { templateUrl: '/contact.html',controller: 'contactCtrl'},
         'Footer':{ templateUrl: '/footer.html'}
       }
-    }) 
+    })
+    .state('about', {
+      url: "/about",
+      views: {
+        'About': { templateUrl: '/about.html'},
+        'Clients': { templateUrl: '/clients.html'},
+        'Contact': { templateUrl: '/contact.html',controller: 'contactCtrl'},
+        'Footer':{ templateUrl: '/footer.html'}
+      }
+    })   
 });

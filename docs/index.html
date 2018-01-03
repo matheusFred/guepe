@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="guepeApp">
 	<head>
+		<base href="/">
 		<title>Guepe</title></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -18,27 +19,29 @@
 		</script>				
 	</head>
 
-	<body id="home">
+	<body id="home" ng-controller="indexCtrl">
 		<!-- NAVBAR -->
-		<nav class="col-md-12 col-sm-12 col-xs-12 router-menu azul-medio" ng-controller="indexCtrl">
+		<nav class="col-md-12 col-sm-12 col-xs-12 router-menu azul-escuro hidden-mobile" id="navbar">
 			<div class="container">
 				<div class="row">
 					<div class="verde-claro router-tittle col-md-3 col-sm-3 col-xs-6" ui-sref="home">
 						<h1>Guepe</h1>
 					</div>
 
-					<div class="col-md-3 col-sm-3"></div>
-
-					<ul class="col-md-9 col-sm-8 col-xs-6">
-						<li class="col-md-8 col-sm-7 router-btn-simple hidden-mobile"></li>
-
-						<li class="col-md-3 col-sm-4 col-xs-6 router-btn-simple" ng-click="contact()" >
-							<h4 class="hidden-mobile">Contact</h4>
-							<i class="fa fa-phone btn-contact" aria-hidden="true"></i>						
-						</li>	
-						<li class="col-md-1 col-sm-1 col-xs-6 router-btn-simple" ui-sref="faq">
-							<h4>FAQ</h4>
-						</li>																					
+					<ul class="col-md-9 col-sm-9 col-xs-6">
+						<li class="col-md-4 col-sm-4 router-btn-simple"></li>
+						<li class="col-md-2 col-sm-2 router-btn-simple" ui-sref="home">
+							<h4>Home</h4>						
+						</li>							
+						<li class="col-md-2 col-sm-2 router-btn-simple" ui-sref="services">
+							<h4>Services</h4>						
+						</li>		
+						<li class="col-md-2 col-sm-2 router-btn-simple" ui-sref="about">
+							<h4>About</h4>
+						</li>												
+						<li class="col-md-2 col-sm-2 router-btn-simple" ng-click="scrollContact()">
+							<h4>Contact</h4>					
+						</li>																										
 					</ul>					
 				</div>	<!-- Fecha row -->
 			</div>	<!-- Fecha container -->
@@ -46,9 +49,14 @@
 		
 		<!-- VIEW'S -->
 		<div class="transition" ui-view="Home"></div>
+		<div class="transition" ui-view="Mission"></div>
+
+		<div class="transition" ui-view="Services"></div>
 		<div class="transition" ui-view="Plans"></div>
+
 		<div class="transition" ui-view="About"></div>
-		<div class="transition" ui-view="Faq"></div>
+		<div class="transition" ui-view="Clients"></div>
+
 		<div class="transition" ui-view="Contact"></div>
 		<div class="transition" ui-view="Footer"></div>
 
@@ -65,27 +73,70 @@
 		<script src="js/controller/homeCtrl.js"></script>
 		<script src="js/controller/plansCtrl.js"></script>
 		<script src="js/controller/indexCtrl.js"></script>
+		<script src="js/controller/serviceCtrl.js"></script>		
 		<script src="js/controller/contactCtrl.js"></script>
 
 		<!-- TEMPLATE --> 
+			<!-- HOME --> 
 		<script type="text/ng-template" id="/home.html">
 			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-home nopadding">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 col-sm-12 col-xs-12 home-steps">
 							<div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="step in steps">
-								<img ng-src="{{step.photo}}" alt="Hot home image">
+								<img ng-src="{{step.photo}}" alt="Home images">
 								<h3>{{step.step}}</h3>
 								<p>{{step.message}}</p>
 							</div>						
 						</div>
 					</div> <!-- Fecha row -->
 				</div> <!-- Fecha container -->
+			</section>			
+		</script>
+
+		<script type="text/ng-template" id="/mission.html">
+			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-mission azul-medio nopadding">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<h2>MISSION</h2>
+							<h4>We have taken on the mission of developing,</h4>
+							<h1>Quality and personality websites</h1>
+							<h3>to better serve the customer!</h3>
+						</div>
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<div class="mission-btn btn btn-secondary btn-lg" ui-sref="services" ng-click="scrollTop()">
+								Meet our services!
+							</div>
+						</div>
+					</div> <!-- Fecha row -->
+				</div> <!-- Fecha container -->					
+			</section>			
+		</script>
+
+			<!-- PLANS --> 
+		<script type="text/ng-template" id="/services.html">
+			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-services nopadding">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12 services-steps">
+							<div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="step in steps">
+								<img ng-src="{{step.photo}}" alt="Service images">
+								<h3>{{step.step}}</h3>
+							</div>
+						</div>
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<div class="service-btn btn btn-secondary btn-lg" ui-sref="about" ng-click="scrollTop()">
+								Questions
+							</div>
+						</div>
+					</div>
+				</div>
 				<div class="col-md-12 col-sm-12 col-xs-12 nopadding">
 					<div class="col-md-6 col-sm-6 col-xs-6 fixer-baixo"></div>
 					<div class="col-md-6 col-sm-6 col-xs-6 fixer-baixo1"></div>
-				</div>
-			</section>			
+				</div>				
+			</section>	
 		</script>
 
 		<script type="text/ng-template" id="/plans.html"> 
@@ -131,67 +182,36 @@
 			</section>			
 		</script>
 
+			<!-- ABOUT --> 
 		<script type="text/ng-template" id="/about.html">
-			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-about nopadding">
+			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-about nopadding azul-claro">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-12 col-sm-12 col-xs-12"><h1></h1></div>
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<h2>ABOUT</h2>
+						</div>
 					</div>
-				</div>
-				<div class="col-md-12 col-sm-12 col-xs-12 nopadding">
-					<div class="col-md-6 col-sm-6 col-xs-6 fixer-baixo"></div>
-					<div class="col-md-6 col-sm-6 col-xs-6 fixer-baixo1"></div>
 				</div>				
 			</section>	
 		</script>
 
-		<script type="text/ng-template" id="/faq.html">
-			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-faq azul-claro">
+		<script type="text/ng-template" id="/clients.html">
+			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-client nopadding azul-claro">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 col-sm-12 col-xs-12">
-							<h2>FAQ</h2>
-						</div>						
-						<ul class="col-md-6 col-sm-6 col-xs-12 faq-contract"> 
-							<li>
-								<h3>Desing II</h3>
-								<p>Mobile and tablet support.</p>
-							</li>
-							<li>
-								<h3>Maintenance</h3>
-								<p>Update layout after final prototype.</p>
-							</li>
-							<li>
-								<h3>Help Desk</h3>
-								<p>24hrs</p>
-							</li>
-							<li>
-								<h3>Systems</h3>
-								<p>Only include other projects(plans).</p>
-							</li>
-						</ul>
-
-						<ul class="col-md-6 col-sm-6 col-xs-12 faq-contract"> 
-							<li>
-								<h3>Design I</h3>
-								<p>Choose the colors of your website using the colors below:</p>
-								<img src="img/faq/palheta.jpg" alt="Colors">
-								<p>Choose your pages and menu layout.</p>
-								<p>Choose the sources for your website:<a href="https://fonts.google.com/" target="_blank">Available Fonts!</a></p>
-							</li>
-						</ul>
-
-						<div class="col-md-12 col-sm-12 col-xs-12">
-							<h3>More information or another projects, contact by email!</h3>
-						</div>						
+							
+						</div>
 					</div>
-				</div>
+				</div>				
 			</section>	
 		</script>
 
+			<!-- FOOTER --> 
 		<script type="text/ng-template" id="/contact.html">
 			<section class="col-md-12 col-sm-12 col-xs-12 nopadding pagebox-contact" id="contact">
-			<div class="col-md-12 col-sm-12 col-xs-12 nopadding">
+			<div class="col-md-12 col-sm-12 col-xs-12 nopadding" 
+				ng-hide="currentPath === '/about' || currentPath === '/' || currentPath === '/home'">
 				<div class="col-md-6 col-sm-6 col-xs-6 fixer-cima"></div>
 				<div class="col-md-6 col-sm-6 col-xs-6 fixer-cima1"></div>
 			</div>	
@@ -220,7 +240,7 @@
 					</div> <!-- Fecha row -->
 				</div> <!-- Fecha container -->
 			</section>	
-		</script>		
+		</script>	
 
 		<script type="text/ng-template" id="/footer.html">
 			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-footer azul-escuro">
@@ -230,22 +250,17 @@
 							<p>Copyright &copy; Guepe 2017</p>
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-12">
-							<div class="col-sm-4"></div>
-							<li class="col-sm-2 col-xs-4 router-btn-simple">
+							<div class="col-sm-6 col-xs-3"></div>
+							<li class="col-sm-1 col-xs-3 router-btn-simple">
 								<a href="https://www.facebook.com/guepedev/" target="_blank">
 									<i class="fa fa-facebook" aria-hidden="true"></i>
 								</a>
 							</li>	
-							<li class="col-sm-2 col-xs-4 router-btn-simple">
+							<li class="col-sm-1 col-xs-3 router-btn-simple">
 								<a href="https://github.com/CloseBRF" target="_blank">
 									<i class="fa fa-github" aria-hidden="true"></i>
 								</a>
-							</li>	
-							<li class="col-sm-2 col-xs-4 router-btn-simple">
-								<a href="http://programmercrazy.tumblr.com/" target="_blank">
-									<i class="fa fa-tumblr" aria-hidden="true"></i>
-								</a>
-							</li>				
+							</li>					
 						</div>									
 					</div>
 				</div>

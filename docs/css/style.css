@@ -21,17 +21,9 @@ h5{font-weight: bold !important;margin: 0px !important;}
 .verde-claro{background: #02a9a2;}
 .verde-escuro{background: #003333;}
 
-/* TRANSIÇÃO DE PÁGINAS */
 
-.transition.ng-enter {
-  transition: 0.5s linear all;
-  opacity:0;
-}
-.transition.ng-enter.ng-enter-active {
-  opacity:1;
-}
-
-/**** CLASS NAVBAR ****/
+/**************************************************************************************************************/
+/**** NAVBAR ****/
 
 .router-menu{
 	z-index: 10;
@@ -47,31 +39,23 @@ h5{font-weight: bold !important;margin: 0px !important;}
 .btn-contact:hover,
 .plans-faq:hover i,
 .router-btn-simple:hover h4{
-	color:#242333; /** Ver isso **/
+	color:#02a9a2; /** Ver isso **/
 	cursor: pointer;
 	transition: 0.4s;
 } 	
 
-.btn-contact{
-	margin-top: 7px;
-	font-size: 25px;
+.router-menu-mobile{
 	visibility: hidden;
-}
+	display: none;
+} 
 
-
-/**** FOOTER ****/
-
-.pagebox-footer i{font-size: 25px;margin: 5px 0px; }
-
-/**** PAGE HOME ****/
+/**************************************************************************************************************/
+/**** SECTION HOME ****/
 
 .pagebox-home{
 	height: auto;
-	background-repeat: no-repeat;
-	background-position: -0px -80px;
-	background-image: url(../img/home/site-img1.png);
+	background-image: url(../img/bg-tech.svg);
 	background-attachment: fixed;
-  	background-size: cover;
 } 
 
 .home-steps div{
@@ -79,34 +63,67 @@ h5{font-weight: bold !important;margin: 0px !important;}
 	margin-bottom: 90px;
 }
 
-/**** FIXER ****/
+/**** SECTION MISSION ****/
 
-.fixer-baixo,
-.fixer-baixo1,
-.fixer-cima,
-.fixer-cima1{z-index: 10}
+.pagebox-mission{
+	height: auto;
+	border-bottom: 2px solid #02A9A2;
+	border-top: 2px solid #02A9A2;
+	background-color: #2d445c;
+} 
 
-.fixer-baixo{
-	border-bottom: 40px solid #336699;
-	border-right: 40px solid transparent;
+.pagebox-mission h4{
+	margin-top: 40px;
+	margin-bottom:0px;
+} .pagebox-mission h3{
+	margin-top: 0px !important;
 }
 
-.fixer-baixo1{
-	border-bottom: 40px solid #336699;
-	border-left: 40px solid transparent;
+.pagebox-mission h1{
+	color: #02A9A2;
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
-.fixer-cima{
-	border-top: 40px solid #336699;
-	border-right: 40px solid transparent;
+.mission-btn{
+	font-size: 25px;
+	background-color: transparent;
+	border: 1px solid #02A9A2;
+	margin: 30px 0px;
+} .mission-btn:hover {
+	background-color: #02A9A2;
+	color: white;
 }
 
-.fixer-cima1{
-	border-top: 40px solid #336699;
-	border-left: 40px solid transparent;
+/**** SECTION CLIENTS ****/
+
+.pagebox-client{
+	height: 5px;
+} 
+
+/**************************************************************************************************************/
+/**** SECTION SERVICE ****/
+
+.pagebox-services{
+	height: auto;
+} 
+
+.services-steps div{
+	margin-top: 50px;
+	margin-bottom: 20px;
 }
 
-/**** PAGE PLANS ****/ 
+.service-btn{
+	font-size: 25px;
+	background-color: transparent;
+	border: 1px solid white;
+	margin-bottom: 50px;
+} .service-btn:hover {
+	background-color: white;
+	color:#363436;
+}
+
+/**** SECTION PLANS ****/ 
 
 .pagebox-plans{
 	z-index: 2;
@@ -135,53 +152,41 @@ h5{font-weight: bold !important;margin: 0px !important;}
 .plans-detail i{margin-top: 5px;}
 .plans-detail p{text-align: left;}  
 
-/**** ABOUT US ****/
+/**************************************************************************************************************/
+/**** SECTION ABOUT US ****/
 
 .pagebox-about{
-	height: 60px;
-	background-repeat: no-repeat;
-	background-position: -0px -80px;
-	background-image: url(../img/site-img2.jpg);
+	height: 500px;
+	background-image: url(../img/constellation.svg);
 	background-attachment: fixed;
-  	background-size: cover;
 } 
 
-/**** PAGE FAQ ****/ 
-.pagebox-faq{
-	z-index: 2;
-	height: auto;
-	padding-bottom: 50px;
-}
-
-.faq-contract{text-align: left;margin-top: 20px}
-.faq-contract li p,
-.faq-contract li a,
-.faq-contract li img{ margin-left: 10px; }
-
-.faq-contract img{
-	width: 250px;
-	height: 150px;
-	padding-bottom: 15px;
-}
-
-/**** PAGE CONTACT ****/ 
+/**** SECTION CONTACT ****/ 
 
 .pagebox-contact{
 	height: auto;
-	background-image: url(../img/site-img2.jpg);
+	background-image: url(../img/dark_mosaico.png);
 	background-attachment: fixed;
-  	background-size: cover;
-  	background-repeat: repeat-x;
-
 }
 
-.pagebox-contact i{font-size: 70px;margin-top: 70px;}
+.pagebox-contact i{
+	font-size: 70px;
+	margin-top: 70px;
+}
 
 #map{
   height: 250px;
   margin: 30px;
 }
 
+/**** FOOTER ****/
+
+.pagebox-footer i{
+	font-size: 25px;
+	margin: 5px 0px; 
+}
+
+/**************************************************************************************************************/
 /**** MEDIA QUERY'S MOBILE CONFIGURATION ****/
 
 @media only screen and (max-width: 768px) {
@@ -203,7 +208,45 @@ h5{font-weight: bold !important;margin: 0px !important;}
 	/****** DEFAULT ******/
 	
 	.hidden-mobile{visibility: hidden;display: none;}
+	.router-menu-mobile{visibility: visible;display: block;}
 	.pagebox-footer i{margin: 0px 0px 15px 0px; }
-	.btn-contact{visibility: visible;}
 
 }	
+
+/**************************************************************************************************************/
+/**** FIXER ****/
+
+.fixer-baixo,
+.fixer-baixo1,
+.fixer-cima,
+.fixer-cima1{z-index: 10}
+
+.fixer-baixo{
+	border-bottom: 40px solid #336699;
+	border-right: 40px solid transparent;
+}
+
+.fixer-baixo1{
+	border-bottom: 40px solid #336699;
+	border-left: 40px solid transparent;
+}
+
+.fixer-cima{
+	border-top: 40px solid #336699;
+	border-right: 40px solid transparent;
+}
+
+.fixer-cima1{
+	border-top: 40px solid #336699;
+	border-left: 40px solid transparent;
+}
+
+/* TRANSIÇÃO DE PÁGINAS */
+
+.transition.ng-enter {
+  transition: 0.5s linear all;
+  opacity:0;
+}
+.transition.ng-enter.ng-enter-active {
+  opacity:1;
+}
