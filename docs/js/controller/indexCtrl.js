@@ -6,9 +6,19 @@
 /* Desenvolvido por Matheus Ferreira <maathe.f@gmail.com>
 /*
 /* ****************************************************** */
-moduleApp.controller('indexCtrl', function($scope, $location, $http){
+moduleApp.controller('indexCtrl', function($scope, $location, $http, $translate){
  	
- 	$scope.btnMobile = false;
+	$scope.translateValue = 'br';
+
+ 	$scope.switchToBR = function(){
+ 		$translate.use("br");
+ 		$scope.translateValue = 'br';
+ 	}
+
+ 	$scope.switchToEN = function(){
+ 		$translate.use("en");
+ 		$scope.translateValue = 'en';
+ 	}
 
 	$scope.scrollContact = function(){
         $('html, body').animate({

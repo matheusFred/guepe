@@ -21,27 +21,70 @@
 
 	<body id="home" ng-controller="indexCtrl">
 		<!-- NAVBAR -->
-		<nav class="col-md-12 col-sm-12 col-xs-12 router-menu azul-escuro hidden-mobile" id="navbar">
+		<nav class="col-md-12 col-sm-12 col-xs-12 router-menu azul-escuro" id="navbar">
 			<div class="container">
 				<div class="row">
 					<div class="verde-claro router-tittle col-md-3 col-sm-3 col-xs-6" ui-sref="home">
 						<h1>Guepe</h1>
 					</div>
 
-					<ul class="col-md-9 col-sm-9 col-xs-6">
-						<li class="col-md-4 col-sm-4 router-btn-simple"></li>
+					<ul class="col-xs-3 router-btn-mobile">
+						<button class="dropdown-toggle col-xs-12" 
+				  			type="button" id="dropdownMenu-mobile" 
+				  			data-toggle="dropdown" 
+				  			aria-haspopup="true" 
+				  			aria-expanded="false">
+							<i class="fa fa-bars"></i>
+						</button>
+						<div class="dropdown-menu azul-escuro col-md-12 col-sm-12 col-xs-12" aria-labelledby="dropdownMenu-mobile">
+							<li class="col-xs-12 router-btn-simple dropdown-item" ui-sref="home">
+								<h4>Home</h4>						
+							</li>							
+							<li class="col-xs-12 router-btn-simple dropdown-item" ui-sref="services">
+								<h4>{{ 'MENU_BTN1' | translate }}</h4>						
+							</li>		
+							<li class="col-xs-12 router-btn-simple dropdown-item" ui-sref="about">
+								<h4>{{ 'MENU_BTN2' | translate }}</h4>
+							</li>												
+							<li class="col-xs-12 router-btn-simple dropdown-item" ng-click="scrollContact()">
+								<h4>{{ 'MENU_BTN3' | translate }}</h4>					
+							</li>
+						</div>		
+					</ul>
+
+					<div class="col-md-2 col-sm-2 col-xs-3 router-btn-simple dropdown">
+						<button class="dropdown-toggle col-md-12" 
+				  			type="button" id="dropdownLang" 
+				  			data-toggle="dropdown" 
+				  			aria-haspopup="true" 
+				  			aria-expanded="false">
+							<img src="img/home/euaflag.png" ng-show="translateValue == 'en'" alt="American flag">
+							<img src="img/home/brasilflag.png" ng-show="translateValue == 'br'" alt="Brazil flag">
+						</button>
+						<div class="dropdown-menu col-md-12 col-sm-12" aria-labelledby="dropdownLang">
+						    <button class="dropdown-item col-md-6 col-sm-6 col-xs-12" type="button" ng-click="switchToEN()" >
+						    	<img src="img/home/euaflag.png" alt="American flag">
+						    </button>
+						    <button class="dropdown-item col-md-6 col-sm-6 col-xs-12" type="button" ng-click="switchToBR()">
+						    	<img src="img/home/brasilflag.png" alt="Brazil flag">
+						    </button>
+						</div>														
+					</div>
+
+					<ul class="col-md-7 col-sm-7 hidden-mobile">		
+						<li class="col-md-2 col-sm-2 router-btn-simple"></li>
 						<li class="col-md-2 col-sm-2 router-btn-simple" ui-sref="home">
 							<h4>Home</h4>						
 						</li>							
 						<li class="col-md-2 col-sm-2 router-btn-simple" ui-sref="services">
-							<h4>Services</h4>						
+							<h4>{{ 'MENU_BTN1' | translate }}</h4>						
 						</li>		
 						<li class="col-md-2 col-sm-2 router-btn-simple" ui-sref="about">
-							<h4>About</h4>
+							<h4>{{ 'MENU_BTN2' | translate }}</h4>
 						</li>												
 						<li class="col-md-2 col-sm-2 router-btn-simple" ng-click="scrollContact()">
-							<h4>Contact</h4>					
-						</li>																										
+							<h4>{{ 'MENU_BTN3' | translate }}</h4>					
+						</li>																							
 					</ul>					
 				</div>	<!-- Fecha row -->
 			</div>	<!-- Fecha container -->
@@ -65,15 +108,18 @@
 		<script src="lib/jquery/dist/jquery.min.js"></script>
 		<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script src="lib/angular-animate/angular-animate.min.js"></script>
+		<script src="lib/angular-translate/angular-translate.js"></script>
+		<script src="lib/angular-translate/angular-translate.min.js"></script>
 		<script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>	
 		
 		<!-- ANGULAR CONTROLLERS -->
 		<script src="js/app.js"></script>
 		<script src="js/routes.js"></script>
+		<script src="js/translations.js"></script>		
 		<script src="js/controller/homeCtrl.js"></script>
 		<script src="js/controller/plansCtrl.js"></script>
 		<script src="js/controller/indexCtrl.js"></script>
-		<script src="js/controller/serviceCtrl.js"></script>		
+		<script src="js/controller/serviceCtrl.js"></script>
 		<script src="js/controller/contactCtrl.js"></script>
 
 		<!-- TEMPLATE --> 
@@ -85,8 +131,11 @@
 						<div class="col-md-12 col-sm-12 col-xs-12 home-steps">
 							<div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="step in steps">
 								<img ng-src="{{step.photo}}" alt="Home images">
-								<h3>{{step.step}}</h3>
-								<p>{{step.message}}</p>
+								<h3 ng-if="translateValue == 'en'">{{step.step}}</h3>
+								<p ng-if="translateValue == 'en'">{{step.message}}</p>
+
+								<h3 ng-if="translateValue == 'br'">{{step.stepbr}}</h3>
+								<p ng-if="translateValue == 'br'">{{step.messagebr}}</p>
 							</div>						
 						</div>
 					</div> <!-- Fecha row -->
@@ -99,14 +148,14 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 col-sm-12 col-xs-12">
-							<h2>MISSION</h2>
-							<h4>We have taken on the mission of developing,</h4>
-							<h1>Quality and personality websites</h1>
-							<h3>to better serve the customer!</h3>
+							<h2>{{ 'MISSION_TITLE' | translate }}</h2>
+							<h4>{{ 'MISSION_TEXT1' | translate }}</h4>
+							<h1>{{ 'MISSION_TEXT2' | translate }}</h1>
+							<h3>{{ 'MISSION_TEXT3' | translate }}</h3>
 						</div>
 						<div class="col-md-12 col-sm-12 col-xs-12">
 							<div class="mission-btn btn btn-secondary btn-lg" ui-sref="services" ng-click="scrollTop()">
-								Meet our services!
+								{{ 'MISSION_BTN' | translate }}
 							</div>
 						</div>
 					</div> <!-- Fecha row -->
@@ -122,12 +171,13 @@
 						<div class="col-md-12 col-sm-12 col-xs-12 services-steps">
 							<div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="step in steps">
 								<img ng-src="{{step.photo}}" alt="Service images">
-								<h3>{{step.step}}</h3>
+								<h3 ng-if="translateValue == 'en'">{{step.step}}</h3>
+								<h3 ng-if="translateValue == 'br'">{{step.stepbr}}</h3>
 							</div>
 						</div>
 						<div class="col-md-12 col-sm-12 col-xs-12">
 							<div class="service-btn btn btn-secondary btn-lg" ui-sref="about" ng-click="scrollTop()">
-								Questions
+								{{ 'SERVICES_BTN' | translate }}
 							</div>
 						</div>
 					</div>
@@ -140,18 +190,19 @@
 		</script>
 
 		<script type="text/ng-template" id="/plans.html"> 
-			<section class="col-md-12 col-sm-12 col-xs-12 nopadding	pagebox-plans azul-claro">
+			<section class="col-md-12 col-sm-12 col-xs-12 nopadding	pagebox-plans azul-medio">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 col-sm-12 col-xs-12">
-							<h2>PLANS</h2>
+							<h2>{{ 'PLANS_TITLE' | translate }}</h2>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-12 plans-box" ng-repeat="price in prices">
 							<div class="col-md-12 col-sm-12 col-xs-12 nopadding-tablet">
 								<div class="col-md-12 col-sm-12 col-xs-12 azul-escuro">
-									<h3>{{price.name}}</h3>
+									<h3 ng-if="translateValue == 'en'">{{price.name}}</h3>
+									<h3 ng-if="translateValue == 'br'">{{price.namebr}}</h3>
 								</div>
-								<div class="col-md-12 col-sm-12 col-xs-12 azul-medio">
+								<div class="col-md-12 col-sm-12 col-xs-12 azul-claro">
 									<div class="col-md-12 col-sm-12 col-xs-12 plans-price">
 										<h4>US$:</h4>
 										<h1>{{price.value}}</h1>
@@ -188,7 +239,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 col-sm-12 col-xs-12">
-							<h2>ABOUT</h2>
+							<h2>{{ 'ABOUT_TITLE' | translate }}</h2>
 						</div>
 					</div>
 				</div>				
@@ -211,14 +262,14 @@
 		<script type="text/ng-template" id="/contact.html">
 			<section class="col-md-12 col-sm-12 col-xs-12 nopadding pagebox-contact" id="contact">
 			<div class="col-md-12 col-sm-12 col-xs-12 nopadding" 
-				ng-hide="currentPath === '/about' || currentPath === '/' || currentPath === '/home'">
+				ng-hide="currentPath === '/about'">
 				<div class="col-md-6 col-sm-6 col-xs-6 fixer-cima"></div>
 				<div class="col-md-6 col-sm-6 col-xs-6 fixer-cima1"></div>
 			</div>	
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 col-sm-12 col-xs-12">
-							<h2>CONTACT</h2>
+							<h2>{{ 'CONTACT_TITLE' | translate }}</h2>
 						</div>
 						<div class="col-md-6 col-sm-12 col-xs-12">
 							<div class="col-md-6 col-sm-6 col-xs-12">
@@ -243,24 +294,24 @@
 		</script>	
 
 		<script type="text/ng-template" id="/footer.html">
-			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-footer azul-escuro">
+			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-footer azul-claro">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6 col-sm-6 col-xs-12 pdg-top15">
-							<p>Copyright &copy; Guepe 2017</p>
+							<p>{{ 'COPY' | translate }} &copy; Guepe 2017</p>
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-12">
 							<div class="col-sm-6 col-xs-3"></div>
-							<li class="col-sm-1 col-xs-3 router-btn-simple">
+							<div class="col-sm-1 col-xs-3">
 								<a href="https://www.facebook.com/guepedev/" target="_blank">
 									<i class="fa fa-facebook" aria-hidden="true"></i>
 								</a>
-							</li>	
-							<li class="col-sm-1 col-xs-3 router-btn-simple">
+							</div>	
+							<div class="col-sm-1 col-xs-3">
 								<a href="https://github.com/CloseBRF" target="_blank">
 									<i class="fa fa-github" aria-hidden="true"></i>
 								</a>
-							</li>					
+							</div>					
 						</div>									
 					</div>
 				</div>
