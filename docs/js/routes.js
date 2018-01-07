@@ -7,13 +7,10 @@
 /* Desenvolvido por Matheus Ferreira <maathe.f@gmail.com>
 /*
 /* ****************************************************** */
-moduleApp.config(["$locationProvider", function($locationProvider) {
-  $locationProvider.html5Mode(true);
-}]);
 moduleApp.config(function($stateProvider) {
   $stateProvider
     .state('index', {
-      url: "/",
+      url: "",
       views: {
         'Home': { templateUrl: '/home.html', controller: 'homeCtrl'},
         'Mission': { templateUrl: '/mission.html'},
