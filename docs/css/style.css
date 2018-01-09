@@ -161,10 +161,14 @@ h5{font-weight: bold !important;margin: 0px !important;}
 /**** SECTION ABOUT US ****/
 
 .pagebox-about{
-	height: 500px;
+	height: 400px;
 	background-image: url(../img/constellation.svg);
 	background-attachment: fixed;
 } 
+
+.about_block{
+	text-align: right;
+}
 
 /**** SECTION CONTACT ****/ 
 

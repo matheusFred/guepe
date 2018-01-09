@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link rel='stylesheet' href='lib/angular-loading-bar/build/loading-bar.min.css' type='text/css'/>
 		<!-- CSS -->
 		<link rel="stylesheet" href="css/style.css" />
 
@@ -19,6 +20,7 @@
 	</head>
 
 	<body id="home" ng-controller="indexCtrl">
+		<div id="loading-bar-container"></div>
 		<!-- NAVBAR -->
 		<nav class="col-md-12 col-sm-12 col-xs-12 router-menu azul-escuro" id="navbar">
 			<div class="container">
@@ -40,13 +42,13 @@
 								<h4>Home</h4>						
 							</li>							
 							<li class="col-xs-12 router-btn-simple dropdown-item" ui-sref="services">
-								<h4>{{ 'MENU_BTN1' | translate }}</h4>						
+								<h4>Services</h4>						
 							</li>		
 							<li class="col-xs-12 router-btn-simple dropdown-item" ui-sref="about">
-								<h4>{{ 'MENU_BTN2' | translate }}</h4>
+								<h4>About</h4>
 							</li>												
 							<li class="col-xs-12 router-btn-simple dropdown-item" ng-click="scrollContact()">
-								<h4>{{ 'MENU_BTN3' | translate }}</h4>					
+								<h4>Contact</h4>					
 							</li>
 						</div>		
 					</ul>
@@ -76,13 +78,13 @@
 							<h4>Home</h4>						
 						</li>							
 						<li class="col-md-2 col-sm-2 router-btn-simple" ui-sref="services">
-							<h4>{{ 'MENU_BTN1' | translate }}</h4>						
+							<h4>Services</h4>						
 						</li>		
 						<li class="col-md-2 col-sm-2 router-btn-simple" ui-sref="about">
-							<h4>{{ 'MENU_BTN2' | translate }}</h4>
+							<h4>About</h4>
 						</li>												
 						<li class="col-md-2 col-sm-2 router-btn-simple" ng-click="scrollContact()">
-							<h4>{{ 'MENU_BTN3' | translate }}</h4>					
+							<h4>Contact</h4>					
 						</li>																							
 					</ul>					
 				</div>	<!-- Fecha row -->
@@ -109,11 +111,13 @@
 		<script src="lib/angular-animate/angular-animate.min.js"></script>
 		<script src="lib/angular-translate/angular-translate.js"></script>
 		<script src="lib/angular-translate/angular-translate.min.js"></script>
+		<script src='lib/angular-loading-bar/build/loading-bar.min.js'></script>
 		<script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>	
 		
 		<!-- ANGULAR CONTROLLERS -->
 		<script src="js/app.js"></script>
 		<script src="js/routes.js"></script>
+		<script src="js/config.js"></script>
 		<script src="js/translations.js"></script>		
 		<script src="js/controller/homeCtrl.js"></script>
 		<script src="js/controller/plansCtrl.js"></script>
@@ -237,8 +241,15 @@
 			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-about nopadding azul-claro">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-12 col-sm-12 col-xs-12">
-							<h2>{{ 'ABOUT_TITLE' | translate }}</h2>
+						<div class="col-md-12 col-sm-12 col-xs-12 about_block">
+								<h2>{{ 'ABOUT_TITLE1' | translate }}</h2>
+								<h3>{{ 'ABOUT_TEXT1' | translate }}</h3>
+								<h2>{{ 'ABOUT_TITLE2' | translate }}</h2>
+								<h4>{{ 'ABOUT_TEXT2' | translate }}</h4>
+								<div class="mission-btn btn btn-secondary btn-lg" ng-click="scrollContact()">
+									{{ 'CONTACT_TITLE2' | translate }}
+								</div>								
+								<p>{{ 'ABOUT_TEXT3' | translate }}</p>
 						</div>
 					</div>
 				</div>				
@@ -268,7 +279,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 col-sm-12 col-xs-12">
-							<h2>{{ 'CONTACT_TITLE' | translate }}</h2>
+							<h2>{{ 'CONTACT_TITLE1' | translate }}</h2>
 						</div>
 						<div class="col-md-6 col-sm-12 col-xs-12">
 							<div class="col-md-6 col-sm-6 col-xs-12">
