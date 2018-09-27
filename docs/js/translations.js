@@ -20,7 +20,6 @@ moduleApp.config(['$translateProvider', function ($translateProvider) {
     'MISSION_TEXT3': 'to better serve our customers!',
     'ABOUT_TEXT1': 'We are an agency of web solutions specializing in intelligent systems and websites.',
     'ABOUT_TEXT2': 'We are driven by values and principles such as respect, commitment, serenity in execution and attention to deadlines to make your sites and systems profitable, user-friendly and attractive to potential customers.',
-    'ABOUT_TEXT3': '"The only way to do a good job is by loving what you do"',
 
     'COPY': 'Copyright'
   });
@@ -45,7 +44,6 @@ moduleApp.config(['$translateProvider', function ($translateProvider) {
     'MISSION_TEXT3': 'para melhor servir nossos clientes!',
     'ABOUT_TEXT1': 'Somos uma agência de soluções web especializadas em sistemas e sites inteligentes.',
     'ABOUT_TEXT2': 'Nós somos movidos por valores e princípios como respeito, comprometimento, serenidade na execução e atenção dos prazos para assim tornar seus sites e sistemas rentáveis, agradáveis aos usuários e atrativos aos potenciais clientes.',
-    'ABOUT_TEXT3': '"A única maneira de fazer um bom trabalho é amando o que faz"',
 
     'COPY': 'Direitos reservados'    
   });
