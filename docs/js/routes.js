@@ -31,7 +31,8 @@ moduleApp.config(function($stateProvider) {
       url: "/services",
       views: {
         'Services': { templateUrl: '/services.html', controller: 'serviceCtrl'},
-        'Plans': { templateUrl: '/plans.html', controller: 'plansCtrl'},
+        //'Plans': { templateUrl: '/plans.html', controller: 'plansCtrl'},
+        'Partner': { templateUrl: '/partner.html', controller:'partnerCtrl'},
         'Contact': { templateUrl: '/contact.html',controller: 'contactCtrl'},
         'Footer':{ templateUrl: '/footer.html'}
       }
@@ -40,7 +41,6 @@ moduleApp.config(function($stateProvider) {
       url: "/about",
       views: {
         'About': { templateUrl: '/about.html'},
-        'Clients': { templateUrl: '/clients.html'},
         'Contact': { templateUrl: '/contact.html',controller: 'contactCtrl'},
         'Footer':{ templateUrl: '/footer.html'}
       }

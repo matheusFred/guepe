@@ -89,7 +89,6 @@ h5{font-weight: bold !important;margin: 0px !important;}
 }
 
 .mission-btn{
-	font-size: 25px;
 	background-color: transparent;
 	border: 1px solid #02A9A2;
 	margin: 30px 0px;
@@ -98,11 +97,18 @@ h5{font-weight: bold !important;margin: 0px !important;}
 	color: white;
 }
 
-/**** SECTION CLIENTS ****/
+/**** SECTION PARTNER ****/
 
-.pagebox-client{
-	height: 5px;
+.pagebox-partner{
+	z-index: 2;
+	height: auto; 
+	padding: 50px 0px;
 } 
+
+.partner-img img{
+	height: 70px;
+	width: 100px !important
+}
 
 /**************************************************************************************************************/
 /**** SECTION SERVICE ****/
@@ -119,7 +125,6 @@ h5{font-weight: bold !important;margin: 0px !important;}
 }
 
 .service-btn{
-	font-size: 25px;
 	background-color: transparent;
 	border: 1px solid white;
 	margin-bottom: 50px;
@@ -161,7 +166,7 @@ h5{font-weight: bold !important;margin: 0px !important;}
 /**** SECTION ABOUT US ****/
 
 .pagebox-about{
-	height: 400px;
+	height: auto;
 	background-image: url(../img/constellation.svg);
 	background-attachment: fixed;
 } 
@@ -208,6 +213,8 @@ h5{font-weight: bold !important;margin: 0px !important;}
 	/**** CLASS HOME ****/
 
 	.home-steps div{margin: 40px 0px;}	
+	.router-menu ul{margin-top: 5px;}
+	.router-btn-simple h4{font-size:  12px !important;}
 
 	/**** CLASS CONTACT ****/
 	.dropdown-menu{margin-left: 5px;}
@@ -219,6 +226,8 @@ h5{font-weight: bold !important;margin: 0px !important;}
 	
 	.hidden-mobile{visibility: hidden;display: none;}
 	.pagebox-footer i{margin: 0px 0px 15px 0px; }
+
+	.router-menu ul{margin-top: 0px;}	
 
 	.router-btn-mobile{visibility: visible;display: initial;}
 	.router-btn-mobile .dropdown-menu{margin-left: 0px;}

@@ -11,6 +11,7 @@ moduleApp.config(['$translateProvider', function ($translateProvider) {
     'CONTACT_TITLE1': 'CONTACT',
     'CONTACT_TITLE2': 'CONTACT US',
     'PLANS_TITLE': 'PLANS',
+    'PARTNER_TITLE': 'PARTNER',
     'ABOUT_TITLE1': 'ABOUT',
     'ABOUT_TITLE2': 'VALUES',
 
@@ -35,6 +36,7 @@ moduleApp.config(['$translateProvider', function ($translateProvider) {
     'CONTACT_TITLE1': 'CONTATO',
     'CONTACT_TITLE2': 'FALE CONOSCO',
     'PLANS_TITLE': 'PLANOS',
+    'PARTNER_TITLE': 'PARCEIROS',
     'ABOUT_TITLE1': 'SOBRE',
     'ABOUT_TITLE2': 'VALORES',
 
