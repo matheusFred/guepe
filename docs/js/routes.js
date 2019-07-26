@@ -30,7 +30,7 @@ moduleApp.config(function($stateProvider) {
     .state('services', {
       url: "/services",
       views: {
-        'Services': { templateUrl: '/services.html', controller: 'serviceCtrl'},
+        'Projects': { templateUrl: '/projects.html', controller: 'projectsCtrl'},
         //'Plans': { templateUrl: '/plans.html', controller: 'plansCtrl'},
         'Partner': { templateUrl: '/partner.html', controller:'partnerCtrl'},
         'Contact': { templateUrl: '/contact.html',controller: 'contactCtrl'},

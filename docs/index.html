@@ -7,17 +7,17 @@
 		<!-- CSS LIBS -->
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-		<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
-		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-		<link rel='stylesheet' href='lib/angular-loading-bar/build/loading-bar.min.css' type='text/css'/>
-		<link rel="stylesheet" href="lib/owl.carousel/dist/assets/owl.carousel.min.css" />
-		<link rel="stylesheet" href="lib/owl.carousel/dist/assets/owl.theme.green.min.css" />
-		<link rel="stylesheet" href="lib/owl.carousel/dist/assets/owl.theme.default.min.css" />		
+		<link type='text/css' rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+		<link type='text/css' rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
+		<link type='text/css' rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" >
+		<link type='text/css' rel='stylesheet' href='lib/angular-loading-bar/build/loading-bar.min.css'/>
+		<link type='text/css' rel="stylesheet" href="lib/owl.carousel/dist/assets/owl.carousel.min.css" />
+		<link type='text/css' rel="stylesheet" href="lib/owl.carousel/dist/assets/owl.theme.green.min.css" />
+		<link type='text/css' rel="stylesheet" href="lib/owl.carousel/dist/assets/owl.theme.default.min.css" />		
 		<!-- CSS -->
-		<link rel="stylesheet" href="css/style.css" />
+		<link type='text/css' rel="stylesheet" href="css/style.css" />
 
-		<script async defer
+		<script type="text/javascript" async defer
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVUDHXfEOuwQHetEBOd4azpVzE9Ns5u00">
 		</script>				
 	</head>
@@ -98,7 +98,7 @@
 		<div class="transition" ui-view="Home"></div>
 		<div class="transition" ui-view="Mission"></div>
 
-		<div class="transition" ui-view="Services"></div>
+		<div class="transition" ui-view="Projects"></div>
 		<div class="transition" ui-view="Partner"></div>
 		<div class="transition" ui-view="Plans"></div>
 
@@ -109,29 +109,29 @@
 		<div class="transition" ui-view="Footer"></div>
 
 		<!-- SCRIPT LIBS -->
-		<script src="lib/angular/angular.min.js"></script>
-		<script src="lib/jquery/dist/jquery.min.js"></script>
-		<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
-	    <script src="lib/owl.carousel/dist/owl.carousel.min.js"></script>
-		<script src="lib/angular-animate/angular-animate.min.js"></script>
-		<script src="lib/angular-translate/angular-translate.js"></script>
-	    <script src="lib/angular-animate/angular-animate.min.js"></script>
-		<script src="lib/angular-translate/angular-translate.min.js"></script>
-		<script src='lib/angular-loading-bar/build/loading-bar.min.js'></script>
-	    <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
-		<script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>	
+		<script type="text/javascript" src="lib/angular/angular.min.js"></script>
+		<script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="lib/owl.carousel/dist/owl.carousel.min.js"></script>
+		<script type="text/javascript" src="lib/angular-animate/angular-animate.min.js"></script>
+		<script type="text/javascript" src="lib/angular-translate/angular-translate.js"></script>
+	    <script type="text/javascript" src="lib/angular-animate/angular-animate.min.js"></script>
+		<script type="text/javascript" src="lib/angular-translate/angular-translate.min.js"></script>
+		<script type="text/javascript" src='lib/angular-loading-bar/build/loading-bar.min.js'></script>
+	    <script type="text/javascript" src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+		<script type="text/javascript" src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>	
     		    		
 		<!-- ANGULAR CONTROLLERS -->
-		<script src="js/app.js"></script>
-		<script src="js/routes.js"></script>
-		<script src="js/config.js"></script>
-		<script src="js/translations.js"></script>		
-		<script src="js/controller/homeCtrl.js"></script>
-		<script src="js/controller/plansCtrl.js"></script>
-		<script src="js/controller/indexCtrl.js"></script>
-		<script src="js/controller/partnerCtrl.js"></script>
-		<script src="js/controller/serviceCtrl.js"></script>
-		<script src="js/controller/contactCtrl.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="js/routes.js"></script>
+		<script type="text/javascript" src="js/config.js"></script>
+		<script type="text/javascript" src="js/translations.js"></script>		
+		<script type="text/javascript" src="js/controller/homeCtrl.js"></script>
+		<script type="text/javascript" src="js/controller/plansCtrl.js"></script>
+		<script type="text/javascript" src="js/controller/indexCtrl.js"></script>
+		<script type="text/javascript" src="js/controller/partnerCtrl.js"></script>
+		<script type="text/javascript" src="js/controller/projectsCtrl.js"></script>
+		<script type="text/javascript" src="js/controller/contactCtrl.js"></script>
 
 		<!-- TEMPLATE --> 
 			<!-- HOME --> 
@@ -175,28 +175,18 @@
 		</script>
 
 			<!-- PLANS --> 
-		<script type="text/ng-template" id="/services.html">
-			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-services nopadding">
+		<script type="text/ng-template" id="/projects.html">
+			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-services azul-medio nopadding">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-12 col-sm-12 col-xs-12 services-steps">
-							<div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="step in steps">
-								<img ng-src="{{step.photo}}" alt="Service images">
-								<h3 ng-if="translateValue == 'en'">{{step.step}}</h3>
-								<h3 ng-if="translateValue == 'br'">{{step.stepbr}}</h3>
-							</div>
-						</div>
-						<div class="col-md-12 col-sm-12 col-xs-12">
-							<div class="service-btn btn btn-secondary btn-lg" ui-sref="about" ng-click="scrollTop()">
-								{{ 'SERVICES_BTN' | translate }}
+						<div class="col-md-12 col-sm-12 col-xs-12 pdg-top15 pdg-bottom15">
+							<div class="col-md-4 col-sm-4 col-xs-12 service-item" ng-repeat="step in steps">
+								<img ng-src="{{step.photo}}" class="item" alt="Service images">
+								<h3 ng-if="translateValue == 'en'">{{step.site}}</h3>						
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-12 col-sm-12 col-xs-12 nopadding">
-					<div class="col-md-6 col-sm-6 col-xs-6 fixer-baixo"></div>
-					<div class="col-md-6 col-sm-6 col-xs-6 fixer-baixo1"></div>
-				</div>				
+				</div>			
 			</section>	
 		</script>
 
@@ -236,22 +226,16 @@
 			</section>	
 		</script>
 
-		<script type="text/ng-template" id="/partner.html">
-			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-partner nopadding azul-medio">
+		<script type="text/ng-template" id="/partner.html">		
+			<section class="col-md-12 col-sm-12 col-xs-12">
 				<div class="container">
 					<div class="row">
 						<div class="owl-carousel col-md-12 col-sm-12 col-xs-12 vcenter partner-img">
-							<img src="img/partner/angular.png" class="item" alt="">
-							<img src="img/partner/bootstrap.png" class="item" alt="">	
-							<img src="img/partner/firebase.png" class="item" alt="">	
-							<img src="img/partner/fonts1.png" class="item" alt="">	
-							<img src="img/partner/fonts2.png" class="item" alt="">	
-							<img src="img/partner/jquery.png" class="item" alt="">	
-							<img src="img/partner/maps.png" class="item" alt="">	
-							<img src="img/partner/owl.png" class="item" alt="">	
-							<img src="img/partner/react.png" class="item" alt="">	
-							<img src="img/partner/sass.png" class="item" alt="">	
-							<img src="img/partner/Octocat.png" class="item" alt="">	
+							<div class="col-md-1 col-sm-1 col-xs-12" ng-repeat="step in steps">
+								<img ng-src="{{step.photo}}" class="item" alt="Service images">
+								<h3 ng-if="translateValue == 'en'">{{step.step}}</h3>
+								<h3 ng-if="translateValue == 'br'">{{step.stepbr}}</h3>
+							</div>
 						</div>
 					</div>
 				</div>				
@@ -262,7 +246,7 @@
 		<script type="text/ng-template" id="/contact.html">
 			<section class="col-md-12 col-sm-12 col-xs-12 nopadding pagebox-contact" id="contact">
 			<div class="col-md-12 col-sm-12 col-xs-12 nopadding" 
-				ng-hide="currentPath === '/about'">
+				ng-hide="currentPath == '/about' || currentPath == '/services'" >
 				<div class="col-md-6 col-sm-6 col-xs-6 fixer-cima"></div>
 				<div class="col-md-6 col-sm-6 col-xs-6 fixer-cima1"></div>
 			</div>	
@@ -298,7 +282,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6 col-sm-6 col-xs-12 pdg-top15">
-							<p>{{ 'COPY' | translate }} &copy; Guepe 2017</p>
+							<p>{{ 'COPY' | translate }} &copy; Guepe 2019</p>
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-12">
 							<div class="col-sm-6 col-xs-3"></div>
