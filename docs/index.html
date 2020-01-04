@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html ng-app="guepeApp">
 	<head>
+		<!-- METADADOS -->
 		<title>Guepe - Websites development</title></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-
+		<meta name="author" content="Matheus F. Frederico">
+		<meta name="keywords" content="desenvolvimento,apps,site,guepe,dev,system">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Explore formas de conectar seu business ao mundo: Sites / Sistemas / App / SEO, com resultados e transparência." >
+		
 		<!-- CSS LIBS -->
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -14,6 +19,7 @@
 		<link type='text/css' rel="stylesheet" href="lib/owl.carousel/dist/assets/owl.carousel.min.css" />
 		<link type='text/css' rel="stylesheet" href="lib/owl.carousel/dist/assets/owl.theme.green.min.css" />
 		<link type='text/css' rel="stylesheet" href="lib/owl.carousel/dist/assets/owl.theme.default.min.css" />		
+		
 		<!-- CSS -->
 		<link type='text/css' rel="stylesheet" href="css/style.css" />
 
@@ -95,18 +101,19 @@
 		</nav>
 		
 		<!-- VIEW'S -->
-		<div class="transition" ui-view="Home"></div>
-		<div class="transition" ui-view="Mission"></div>
+			<!-- /HOME -->
+			<div class="transition" ui-view="Home"></div>
+			<div class="transition" ui-view="Mission"></div>
 
-		<div class="transition" ui-view="Projects"></div>
-		<div class="transition" ui-view="Partner"></div>
-		<div class="transition" ui-view="Plans"></div>
+			<!-- /SERVICES -->
+			<div class="transition" ui-view="Plans"></div>
+			<div class="transition" ui-view="Partner"></div>
 
-		<div class="transition" ui-view="About"></div>
-		<div class="transition" ui-view="Clients"></div>
+			<!-- /ABOUT-US -->
+			<div class="transition col-md-12 nopadding" ui-view="About"></div>
 
-		<div class="transition" ui-view="Contact"></div>
-		<div class="transition" ui-view="Footer"></div>
+			<div class="transition" ui-view="Contact"></div>
+			<div class="transition" ui-view="Footer"></div>
 
 		<!-- SCRIPT LIBS -->
 		<script type="text/javascript" src="lib/angular/angular.min.js"></script>
@@ -115,11 +122,8 @@
 	    <script type="text/javascript" src="lib/owl.carousel/dist/owl.carousel.min.js"></script>
 		<script type="text/javascript" src="lib/angular-animate/angular-animate.min.js"></script>
 		<script type="text/javascript" src="lib/angular-translate/angular-translate.js"></script>
-	    <script type="text/javascript" src="lib/angular-animate/angular-animate.min.js"></script>
-		<script type="text/javascript" src="lib/angular-translate/angular-translate.min.js"></script>
 		<script type="text/javascript" src='lib/angular-loading-bar/build/loading-bar.min.js'></script>
-	    <script type="text/javascript" src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
-		<script type="text/javascript" src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>	
+	    <script type="text/javascript" src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>	
     		    		
 		<!-- ANGULAR CONTROLLERS -->
 		<script type="text/javascript" src="js/app.js"></script>
@@ -132,175 +136,5 @@
 		<script type="text/javascript" src="js/controller/partnerCtrl.js"></script>
 		<script type="text/javascript" src="js/controller/projectsCtrl.js"></script>
 		<script type="text/javascript" src="js/controller/contactCtrl.js"></script>
-
-		<!-- TEMPLATE --> 
-			<!-- HOME --> 
-		<script type="text/ng-template" id="/home.html">
-			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-home nopadding">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12 col-sm-12 col-xs-12 home-steps">
-							<div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="step in steps">
-								<img ng-src="{{step.photo}}" alt="Home images">
-								<h3 ng-if="translateValue == 'en'">{{step.step}}</h3>
-								<p ng-if="translateValue == 'en'">{{step.message}}</p>
-
-								<h3 ng-if="translateValue == 'br'">{{step.stepbr}}</h3>
-								<p ng-if="translateValue == 'br'">{{step.messagebr}}</p>
-							</div>						
-						</div>
-					</div> <!-- Fecha row -->
-				</div> <!-- Fecha container -->
-			</section>			
-		</script>
-
-		<script type="text/ng-template" id="/mission.html">
-			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-mission azul-medio nopadding">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12 col-sm-12 col-xs-12">
-							<h2>{{ 'MISSION_TITLE' | translate }}</h2>
-							<h4>{{ 'MISSION_TEXT1' | translate }}</h4>
-							<h1>{{ 'MISSION_TEXT2' | translate }}</h1>
-							<h3>{{ 'MISSION_TEXT3' | translate }}</h3>
-						</div>
-						<div class="col-md-12 col-sm-12 col-xs-12">
-							<div class="mission-btn btn btn-secondary btn-lg" ui-sref="services" ng-click="scrollTop()">
-								{{ 'MISSION_BTN' | translate }}
-							</div>
-						</div>
-					</div> <!-- Fecha row -->
-				</div> <!-- Fecha container -->					
-			</section>			
-		</script>
-
-			<!-- PLANS --> 
-		<script type="text/ng-template" id="/projects.html">
-			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-services azul-medio nopadding">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12 col-sm-12 col-xs-12 pdg-top15 pdg-bottom15">
-							<div class="col-md-4 col-sm-4 col-xs-12 service-item" ng-repeat="step in steps">
-								<img ng-src="{{step.photo}}" class="item" alt="Service images">
-								<h3 ng-if="translateValue == 'en'">{{step.site}}</h3>						
-							</div>
-						</div>
-					</div>
-				</div>			
-			</section>	
-		</script>
-
-		<script type="text/ng-template" id="/plans.html"> 
-			<section class="col-md-12 col-sm-12 col-xs-12 nopadding	pagebox-plans azul-medio">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12 col-sm-12 col-xs-12">
-							<h2>{{ 'PLANS_TITLE' | translate }}</h2>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-12 plans-box">
-							<div class="col-md-12 col-sm-12 col-xs-12 nopadding-tablet">
-							
-							</div>	
-						</div>
-					</div>
-				</div>			
-			</section>			
-		</script>
-
-			<!-- ABOUT --> 
-		<script type="text/ng-template" id="/about.html">
-			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-about nopadding azul-claro">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12 col-sm-12 col-xs-12 about_block">
-								<h2>{{ 'ABOUT_TITLE1' | translate }}</h2>
-								<h3>{{ 'ABOUT_TEXT1' | translate }}</h3>
-								<h2>{{ 'ABOUT_TITLE2' | translate }}</h2>
-								<h4>{{ 'ABOUT_TEXT2' | translate }}</h4>
-								<div class="mission-btn btn btn-secondary btn-lg" ng-click="scrollContact()">
-									{{ 'CONTACT_TITLE2' | translate }}
-								</div>								
-						</div>
-					</div>
-				</div>				
-			</section>	
-		</script>
-
-		<script type="text/ng-template" id="/partner.html">		
-			<section class="col-md-12 col-sm-12 col-xs-12">
-				<div class="container">
-					<div class="row">
-						<div class="owl-carousel col-md-12 col-sm-12 col-xs-12 vcenter partner-img">
-							<div class="col-md-1 col-sm-1 col-xs-12" ng-repeat="step in steps">
-								<img ng-src="{{step.photo}}" class="item" alt="Service images">
-								<h3 ng-if="translateValue == 'en'">{{step.step}}</h3>
-								<h3 ng-if="translateValue == 'br'">{{step.stepbr}}</h3>
-							</div>
-						</div>
-					</div>
-				</div>				
-			</section>	
-		</script>
-
-			<!-- FOOTER --> 
-		<script type="text/ng-template" id="/contact.html">
-			<section class="col-md-12 col-sm-12 col-xs-12 nopadding pagebox-contact" id="contact">
-			<div class="col-md-12 col-sm-12 col-xs-12 nopadding" 
-				ng-hide="currentPath == '/about' || currentPath == '/services'" >
-				<div class="col-md-6 col-sm-6 col-xs-6 fixer-cima"></div>
-				<div class="col-md-6 col-sm-6 col-xs-6 fixer-cima1"></div>
-			</div>	
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12 col-sm-12 col-xs-12">
-							<h2>{{ 'CONTACT_TITLE1' | translate }}</h2>
-						</div>
-						<div class="col-md-6 col-sm-12 col-xs-12">
-							<div class="col-md-6 col-sm-6 col-xs-12">
-								<i class="fa fa-mobile" aria-hidden="true"></i>
-								<h3>+1 (561) 853-8909</h3>
-								<p>Phone</p>
-							</div>							
-							<div class="col-md-6 col-sm-6 col-xs-12">
-								<i class="fa fa-envelope-o" aria-hidden="true"></i>
-								<h3>guepebr@gmail.com</h3>
-								<p>Email</p>
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-12 col-xs-12">
-							<div class="row">
-								<div id="map"></div>
-							</div>
-						</div>
-					</div> <!-- Fecha row -->
-				</div> <!-- Fecha container -->
-			</section>	
-		</script>	
-
-		<script type="text/ng-template" id="/footer.html">
-			<section class="col-md-12 col-sm-12 col-xs-12 pagebox-footer azul-claro" id="botlane">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-sm-6 col-xs-12 pdg-top15">
-							<p>{{ 'COPY' | translate }} &copy; Guepe 2019</p>
-						</div>
-						<div class="col-md-6 col-sm-6 col-xs-12">
-							<div class="col-sm-6 col-xs-3"></div>
-							<div class="col-sm-1 col-xs-3">
-								<a href="https://www.facebook.com/guepedev/" target="_blank">
-									<i class="fa fa-facebook" aria-hidden="true"></i>
-								</a>
-							</div>	
-							<div class="col-sm-1 col-xs-3">
-								<a href="https://github.com/CloseBRF" target="_blank">
-									<i class="fa fa-github" aria-hidden="true"></i>
-								</a>
-							</div>					
-						</div>									
-					</div>
-				</div>
-			</section>	
-		</script>
-
 	</body>
 </html>

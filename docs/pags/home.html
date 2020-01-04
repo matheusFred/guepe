@@ -1,0 +1,17 @@
+<!-- HOME --> 
+<section class="col-md-12 col-sm-12 col-xs-12 pagebox-home nopadding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 home-steps">
+                <div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="step in steps">
+                    <img ng-src="{{step.photo}}" alt="Home images">
+                    <h3 ng-if="translateValue == 'en'">{{step.step}}</h3>
+                    <p ng-if="translateValue == 'en'">{{step.message}}</p>
+
+                    <h3 ng-if="translateValue == 'br'">{{step.stepbr}}</h3>
+                    <p ng-if="translateValue == 'br'">{{step.messagebr}}</p>
+                </div>						
+            </div>
+        </div> <!-- Fecha row -->
+    </div> <!-- Fecha container -->
+</section>			

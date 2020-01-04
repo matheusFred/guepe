@@ -19,6 +19,8 @@ h5{font-weight: bold !important;margin: 0px !important;}
 .azul-medio{background: #003366}
 .azul-escuro{background: #000033;}
 
+.grey-escuro{background: #1c1c1f;}
+
 .verde-claro{background: #02a9a2;}
 
 
@@ -134,11 +136,9 @@ h5{font-weight: bold !important;margin: 0px !important;}
 	color:#363436;
 }
 
-.service-item{
-	padding: 20px;
-	height: 250px;
-	width: 350px;
-} .service-item img{height: 240px;width: 340px;}
+.service-item{opacity: 1;cursor: pointer;}
+.service-item:hover{opacity: 0.4; transition: 0.2s;} 
+.service-item img{height: 500px;width: 300px;}
 
 /**** SECTION PLANS ****/ 
 

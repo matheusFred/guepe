@@ -12,37 +12,36 @@ moduleApp.config(function($stateProvider) {
     .state('index', {
       url: "",
       views: {
-        'Home': { templateUrl: '/home.html', controller: 'homeCtrl'},
-        'Mission': { templateUrl: '/mission.html'},
-        'Contact': { templateUrl: '/contact.html', controller: 'contactCtrl'},
-        'Footer':{ templateUrl: '/footer.html'}
+        'Home': { templateUrl: 'pags/home.html', controller: 'homeCtrl'},
+        'Mission': { templateUrl: 'pags/mission.html'},
+        'Contact': { templateUrl: 'pags/contact.html', controller: 'contactCtrl'},
+        'Footer':{ templateUrl: 'pags/footer.html'}
       }
     }) 
     .state('home', {
       url: "/home",
       views: {
-        'Home': { templateUrl: '/home.html', controller: 'homeCtrl'},
-        'Mission': { templateUrl: '/mission.html'},
-        'Contact': { templateUrl: '/contact.html', controller: 'contactCtrl'},
-        'Footer':{ templateUrl: '/footer.html'}
+        'Home': { templateUrl: 'pags/home.html', controller: 'homeCtrl'},
+        'Mission': { templateUrl: 'pags/mission.html'},
+        'Contact': { templateUrl: 'pags/contact.html', controller: 'contactCtrl'},
+        'Footer':{ templateUrl: 'pags/footer.html'}
       }
     })  
     .state('services', {
       url: "/services",
       views: {
-        'Projects': { templateUrl: '/projects.html', controller: 'projectsCtrl'},
-        //'Plans': { templateUrl: '/plans.html', controller: 'plansCtrl'},
-        'Partner': { templateUrl: '/partner.html', controller:'partnerCtrl'},
-        'Contact': { templateUrl: '/contact.html',controller: 'contactCtrl'},
-        'Footer':{ templateUrl: '/footer.html'}
+        'Plans': { templateUrl: 'pags/plans.html', controller: 'plansCtrl'},
+        // 'Partner': { templateUrl: 'pags/partner.html', controller:'partnerCtrl'},
+        'Contact': { templateUrl: 'pags/contact.html',controller: 'contactCtrl'},
+        'Footer':{ templateUrl: 'pags/footer.html'}
       }
     })
     .state('about', {
       url: "/about",
       views: {
-        'About': { templateUrl: '/about.html'},
-        'Contact': { templateUrl: '/contact.html',controller: 'contactCtrl'},
-        'Footer':{ templateUrl: '/footer.html'}
+        'About': { templateUrl: 'pags/about.html'},
+        'Contact': { templateUrl: 'pags/contact.html',controller: 'contactCtrl'},
+        'Footer':{ templateUrl: 'pags/footer.html'}
       }
     })   
 });
